@@ -1,3 +1,5 @@
+"use client"
+
 import racesData from '@/services/api/races.json';
 import RaceButton from "@/components/RaceButton";
 import {Race} from "@/services/objects/Race";
@@ -7,16 +9,17 @@ export default function Page(): ReactElement {
   return (
       <>
         <h2>Quel est ton objectif ?</h2>
-        {/*<div>*/}
-        {/*  {racesData.map((race: Race) => {*/}
-        {/*    return (*/}
-        {/*        <RaceButton*/}
-        {/*            key={race.id}*/}
-        {/*            race={race}*/}
-        {/*        />*/}
-        {/*    );*/}
-        {/*  })}*/}
-        {/*</div>*/}
+        <div>
+          {racesData.map((race: Race) => {
+            return (
+                <RaceButton
+                    key={race.id}
+                    onClick={()=>{}}
+                    race={race}
+                />
+            );
+          })}
+        </div>
       </>
   );
 }

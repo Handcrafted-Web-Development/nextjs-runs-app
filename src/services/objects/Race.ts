@@ -1,7 +1,7 @@
 // Create interface Race
 export interface Race {
-  id?: number;
-  name?: string;
+  id: number
+  name: string;
   length?: number;
   description?: string;
   social_stat_needed?: number;
