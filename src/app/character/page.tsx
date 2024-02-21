@@ -1,7 +1,9 @@
+"use client"
+
 import React, { useState } from 'react';
-import { Character } from '../objects/Character';
-import charactersData from '../characters.json';
-import CharacterButton from '../components/CharacterButton';
+import { Character } from '../../services/objects/Character';
+import charactersData from '../../services/api/characters.json';
+import CharacterButton from '../../components/CharacterButton';
 
 const CharacterPage: React.FC = () => {
   const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(null);
@@ -18,7 +20,7 @@ const CharacterPage: React.FC = () => {
           <CharacterButton 
             key={character.id} 
             character={character} 
-            onSelect={handleSelect} // Ajoutez cette ligne
+            onSelect={handleSelect}
           />
         ))}
       </div>
