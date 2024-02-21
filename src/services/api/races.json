@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "10km",
+    "pathname": "assets/img/ten-kilometers.svg",
+    "level": "Facile",
+    "social_stat_needed": 0,
+    "motivation_stat_needed": 0,
+    "fitness_stat_needed": 0,
+    "money_stat_needed": 0
+  },
+  {
+    "id": 2,
+    "name": "Semi-marathon",
+    "pathname": "assets/img/half-marathon.svg",
+    "level": "Intermédiaire",
+    "social_stat_needed": 0,
+    "motivation_stat_needed": 0,
+    "fitness_stat_needed": 0,
+    "money_stat_needed": 0
+  },
+  {
+    "id": 3,
+    "name": "Marathon",
+    "pathname": "assets/img/marathon.svg",
+    "level": "Difficile",
+    "social_stat_needed": 0,
+    "motivation_stat_needed": 0,
+    "fitness_stat_needed": 0,
+    "money_stat_needed": 0
+  }
+]

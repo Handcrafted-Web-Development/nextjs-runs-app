@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Character } from '../../services/objects/Character';
 import charactersData from '../../services/api/characters.json';
-import CharacterButton from '../../components/CharacterButton';
+import CharacterButton from '../buttons/CharacterButton';
 
 const CharacterPage: React.FC = () => {
   const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(null);
@@ -27,7 +27,6 @@ const CharacterPage: React.FC = () => {
       {selectedCharacter && (
         <div>
           <h2>{selectedCharacter.prenom}</h2>
-          <p>{selectedCharacter.description}</p>
           <button onClick={() => setSelectedCharacter(null)}>Fermer</button>
         </div>
       )}

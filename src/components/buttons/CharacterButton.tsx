@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Character } from '../services/objects/Character';
+import { Character } from '../../services/objects/Character';
 
 interface CharacterProps {
   character: Character;
@@ -31,7 +31,7 @@ const CharacterButton: React.FC<CharacterProps> = ({ character, onSelect }) => {
         />
         <p>{character.prenom}</p>
       </button>
-      {/* {showPopup && (
+      {showPopup && (
         <div className="popup">
           <div className="popup-content">
             <h2>{character.prenom}</h2>
@@ -42,7 +42,7 @@ const CharacterButton: React.FC<CharacterProps> = ({ character, onSelect }) => {
             </div>
           </div>
         </div>
-      )} */}
+      )}
     </div>
   );
 };
