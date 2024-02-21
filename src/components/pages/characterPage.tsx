@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { CharacterProps } from '@/services/interfaces/Character';
 import charactersData from '@/services/api/characters.json';
-import CharacterButton from '@/components/buttons/CharacterButton';
+import CharacterButton from '@/components/Buttons/CharacterButton';
 
 const CharacterPage: React.FC = () => {
   const [selectedCharacter, setSelectedCharacter] = useState<CharacterProps | null>(null);
