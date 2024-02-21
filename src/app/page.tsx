@@ -4,7 +4,7 @@ import CharacterChoice from '../components/pages/characterPage'
 
 export default function Home() {
     return (
-        <div>
+        <div className='body-content'>
             <TargetChoice />
     
             <CharacterChoice />
