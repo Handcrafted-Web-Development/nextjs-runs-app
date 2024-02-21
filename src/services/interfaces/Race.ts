@@ -12,7 +12,6 @@ export interface RaceProps {
 }
 
 export interface RaceButtonProps {
-  keyId: number;
   race: RaceProps;
   onClick: MouseEventHandler<HTMLButtonElement>;
 }
