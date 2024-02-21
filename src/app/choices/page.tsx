@@ -1,5 +1,5 @@
 import racesData from '@/services/api/races.json';
-import RaceButton from "@/components/RaceButton";
+import RaceButton from "@/components/buttons/RaceButton";
 import {Race} from "@/services/objects/Race";
 import {ReactElement} from "react";
 

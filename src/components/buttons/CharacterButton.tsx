@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Character } from '../services/objects/Character';
+import { Character } from '../../services/objects/Character';
 
 interface CharacterProps {
   character: Character;
