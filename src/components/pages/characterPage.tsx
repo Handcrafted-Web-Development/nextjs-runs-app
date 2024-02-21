@@ -27,7 +27,6 @@ const CharacterPage: React.FC = () => {
       {selectedCharacter && (
         <div>
           <h2>{selectedCharacter.prenom}</h2>
-          <button onClick={() => setSelectedCharacter(null)}>Fermer</button>
         </div>
       )}
     </div>
