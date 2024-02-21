@@ -1,4 +1,4 @@
-export interface Character {
+export interface CharacterProps {
     id: number;
     prenom: string;
     description: string;

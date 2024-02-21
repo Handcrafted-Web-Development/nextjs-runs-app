@@ -1,14 +1,14 @@
 "use client"
 
 import React, { useState } from 'react';
-import { Character } from '../../services/objects/Character';
-import charactersData from '../../services/api/characters.json';
-import CharacterButton from '../buttons/CharacterButton';
+import { CharacterProps } from '@/services/interfaces/Character';
+import charactersData from '@/services/api/characters.json';
+import CharacterButton from '@/components/buttons/CharacterButton';
 
 const CharacterPage: React.FC = () => {
-  const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(null);
+  const [selectedCharacter, setSelectedCharacter] = useState<CharacterProps | null>(null);
 
-  const handleSelect = (character: Character) => {
+  const handleSelect = (character: CharacterProps) => {
     setSelectedCharacter(character);
   };
 
@@ -16,7 +16,7 @@ const CharacterPage: React.FC = () => {
     <div>
       <h1>Choisissez votre personnage :</h1>
       <div>
-        {charactersData.map((character: Character) => (
+        {charactersData.map((character: CharacterProps) => (
           <CharacterButton 
             key={character.id} 
             character={character} 

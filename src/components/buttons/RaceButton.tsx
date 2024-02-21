@@ -1,12 +1,8 @@
-import {MouseEventHandler, ReactElement} from "react";
-import {Race} from "@/services/objects/Race";
+import { ReactElement} from "react";
+import {RaceButtonProps} from "@/services/interfaces/Race";
 import Image from "next/image";
 
-interface RaceButtonProps {
-  key: number;
-  race: Race;
-  onClick: MouseEventHandler<HTMLButtonElement>;
-}
+
 
 /**
  * @file RaceButton.tsx
