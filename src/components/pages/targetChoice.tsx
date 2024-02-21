@@ -1,14 +1,23 @@
-"use client"
-
 import racesData from '@/services/api/races.json';
 import RaceButton from "@/components/Buttons/RaceButton";
 import {RaceProps} from "@/services/interfaces/Race";
 import {ReactElement, useState} from "react";
+import {GameInstance} from "@/classes/GameInstance";
 
 
-export default function Page(): ReactElement {
+export default function TargetChoice({gameInstance}: {gameInstance: GameInstance}): ReactElement {
 
   const [isSelected, setIsSelected] = useState<boolean>(false);
+  const [race, setRace] = useState<RaceProps>();
+
+    const handleButtonRaceClick = (race: RaceProps) => {
+        setRace(race)
+        setIsSelected(true)
+    }
+
+    const handleButtonSubmitClick = (race: RaceProps) => {
+        gameInstance.getRace(Object.entries(race))
+    }
 
   return (
       <>
@@ -19,13 +28,13 @@ export default function Page(): ReactElement {
                 <RaceButton
                     key={race.id}
                     race={race}
-                    onClick={() => setIsSelected(true)}
+                    onClick={() => handleButtonRaceClick(race)}
                 />
             );
           })}
         </div>
         {isSelected ? (
-            <button></button>
+            <button onClick={() => handleButtonSubmitClick(race)}>Gooo !</button>
         ) : null}
       </>
   );
