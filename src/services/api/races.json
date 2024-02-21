@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "10km",
+    "length": 0,
+    "description": "",
+    "social_stat_needed": 0,
+    "motivation_stat_needed": 0,
+    "fitness_stat_needed": 0,
+    "money_stat_needed": 0
+  },
+  {
+    "id": 2,
+    "name": "Semi-marathon",
+    "length": 0,
+    "description": 0,
+    "social_stat_needed": 0,
+    "motivation_stat_needed": 0,
+    "fitness_stat_needed": 0,
+    "money_stat_needed": 0
+  },
+  {
+    "id": 3,
+    "name": "Marathon",
+    "length": 0,
+    "description": 0,
+    "social_stat_needed": 0,
+    "motivation_stat_needed": 0,
+    "fitness_stat_needed": 0,
+    "money_stat_needed": 0
+  }
+]
