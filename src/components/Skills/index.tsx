@@ -1,7 +1,7 @@
 import Skill from "@/components/Skills/Skill";
 import SkillsJson from "@/services/api/skills.json"
 
-const Skills = () => {
+const Index = () => {
     return (
         <div>
             {Object.entries(SkillsJson).map(([key, skill], index) =>
@@ -11,4 +11,4 @@ const Skills = () => {
     )
 }
 
-export default Skills
+export default Index
