@@ -1,11 +1,18 @@
-const Skill = () => {
+import {ReactElement} from "react";
+
+interface SkillProps {
+    skill: string;
+    value: number;
+}
+
+const Skill = ({skill, value}: SkillProps): ReactElement => {
     return (
-        <div>
+        <div data-value={value}>
             <svg className="icon">
-                <use href="../src/assets/imgs/icons.svg#Social"/>
+                <use href={`/assets/img/icons.svg#${skill}`}/>
             </svg>
             <span>
-                Social
+                {skill}
             </span>
         </div>
     )
