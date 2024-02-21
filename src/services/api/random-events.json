@@ -1,94 +1,184 @@
 [
-    {
-      "category": "social_stat",
-      "level": 50,
-      "event": "Un ami vous fait découvrir un nouveau bar",
-      "effects": {
+  {
+    "category": "social_stat",
+    "level": 50,
+    "label": "Évènement random",
+    "name": "Un nouveau bar",
+    "description": "Un ami vous fait découvrir un nouveau bar",
+    "choices": [
+      {
+        "value": "Gooo !"
+      }
+    ],
+    "effects": [
+      {
         "social": 5,
         "motivation": -10,
         "fitness": -10,
         "money": -10
       }
-    },
-    {
-      "category": "social_stat",
-      "level": -50,
-      "event": "Votre petit copain vous a quitté car vous n’étiez pas assez disponible. Cela vous laisse plus de temps pour votre entraînement",
-      "effects": {
+    ]
+  },
+  {
+    "category": "social_stat",
+    "level": -50,
+    "label": "Évènement random",
+    "name": "Votre couple va mal",
+    "description": "Votre petit copain vous a quitté car vous n’étiez pas assez disponible. Cela vous laisse plus de temps pour votre entraînement",
+    "choices": [
+      {
+        "value": "Oh..."
+      }
+    ],
+    "effects": [
+      {
         "social": -10,
         "fitness": 20,
         "money": 10
       }
-    },
-    {
-      "category": "motivation_stat",
-      "level": 50,
-      "event": "Dans un élan de motivation, vous décidez de devenir bénévole dans une association sportive",
-      "effects": {
+    ]
+  },
+  {
+    "category": "motivation_stat",
+    "level": 50,
+    "label": "Évènement random",
+    "name": "Je suis bénévole",
+    "description": "Dans un élan de motivation, vous décidez de devenir bénévole dans une association sportive",
+    "choices": [
+      {
+        "value": "J'aime le bénévolat !"
+      }
+    ],
+    "effects": [
+      {
         "social": 20,
         "money": -15
       }
-    },
-    {
-      "category": "motivation_stat",
-      "level": -50,
-      "event": "Vous en avez marre, vous ne sortez pas de rester chez vous durant 3 jours",
-      "effects": {
+    ]
+  },
+  {
+    "category": "motivation_stat",
+    "level": -50,
+    "label": "Évènement random",
+    "name": "Ras-le-bol",
+    "description": "Vous en avez marre, vous ne sortez pas de rester chez vous durant 3 jours",
+    "choices": [
+      {
+        "value": "C'est la déprime..."
+      }
+    ],
+    "effects": [
+      {
         "social": -10,
         "fitness": -15,
         "money": 20
       }
-    },
-    {
-      "category": "fitness_stat",
-      "level": 50,
-      "event": "Vous décidez de vous reposer car vous avez fait beaucoup de progrès, vous partez un weekend à la mer avec vos amis",
-      "effects": {
+    ]
+  },
+  {
+    "category": "fitness_stat",
+    "level": 50,
+    "label": "Évènement random",
+    "name": "Fatigué",
+    "description": "Vous décidez de vous reposer car vous avez fait beaucoup de progrès, vous partez un weekend à la mer avec vos amis",
+    "choices": [
+      {
+        "value": "Je suis KO x_x"
+      }
+    ],
+    "effects": [
+      {
         "social": 20,
         "money": -10
       }
-    },
-    {
-      "category": "fitness_stat",
-      "level": -50,
-      "event": "Vous vous blessez légèrement lors d'une séance d'entraînement",
-      "effects": {
+    ]
+  },
+  {
+    "category": "fitness_stat",
+    "level": -50,
+    "label": "Évènement random",
+    "name": "Aïe",
+    "description": "Vous vous blessez légèrement lors d'une séance d'entraînement",
+    "choices": [
+      {
+        "value": "J'ai mal..."
+      }
+    ],
+    "effects": [
+      {
         "motivation": -20,
         "fitness": -15
       }
-    },
-    {
-      "category": "money_stat",
-      "level": 50,
-      "event": "Vous avez assez d’argent pour vous acheter de nouvelles baskets",
-      "effects": {
+    ]
+  },
+  {
+    "category": "money_stat",
+    "level": 50,
+    "label": "Évènement random",
+    "name": "Richesse",
+    "description": "Vous avez assez d’argent pour vous acheter de nouvelles baskets",
+    "choices": [
+      {
+        "value": "Je vais courir vite !!"
+      }
+    ],
+    "effects": [
+      {
         "motivation": 10,
         "fitness": 20,
         "money": -10
       }
-    },
-    {
-      "category": "money_stat",
-      "level": -50,
-      "event": "Vous êtes obligé d’annuler votre abonnement Netflix pour faire des économies",
-      "effects": {
+    ]
+  },
+  {
+    "category": "money_stat",
+    "level": -50,
+    "label": "Évènement random",
+    "name": "Fin de mois",
+    "description": "Vous êtes obligé d’annuler votre abonnement Netflix pour faire des économies",
+    "choices": [
+      {
+        "value": "J'avais pas fini ma série..."
+      }
+    ],
+    "effects": [
+      {
         "social": -10,
         "money": 20
       }
-    },
-    {
-      "event": "C’est votre anniversaire ! Votre maman vous donne de l’argent",
-      "effects": {
+    ]
+  },
+  {
+    "label": "Évènement random",
+    "name": "Anniversaire",
+    "description": "C’est votre anniversaire ! Votre maman vous donne de l’argent",
+    "choices": [
+      {
+        "value": "Je suis riche !"
+      }
+    ],
+    "effects": [
+      {
         "motivation": 10,
         "money": 20
       }
-    },
-    {
-      "event": "Un ouragan vous empêche d’aller courir",
-      "effects": {
+    ]
+  },
+  {
+    "label": "Évènement random",
+    "name": "Vigilance rouge",
+    "description": "Un ouragan vous empêche d’aller courir",
+    "choices": [
+      {
+        "value": "C'est la tempête :o"
+      }
+    ],
+    "effects": [
+      {
         "motivation": -10,
         "fitness": -10
       }
-    }
-  ]
+    ]
+  }
+]
   

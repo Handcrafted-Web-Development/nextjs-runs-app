@@ -1,5 +1,6 @@
-// Create interface Race
-export interface Race {
+import {MouseEventHandler} from "react";
+
+export interface RaceProps {
   id: number
   name: string;
   pathname: string;
@@ -8,4 +9,9 @@ export interface Race {
   motivation_stat_needed?: number;
   fitness_stat_needed?: number;
   money_stat_needed?: number;
+}
+
+export interface RaceButtonProps {
+  race: RaceProps;
+  onClick: MouseEventHandler<HTMLButtonElement>;
 }

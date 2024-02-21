@@ -3,7 +3,7 @@ import '../../../public/assets/styles/main.css'
 import '../../../public/assets/styles/character.css'
 
 import React, { useState } from 'react';
-import { Character } from '../../services/objects/Character';
+import { CharacterProps } from '@/services/interfaces/Character';
 import Image from "next/image";
 
 interface CharacterProps {
@@ -13,7 +13,7 @@ interface CharacterProps {
   onClick: () => void;
 }
 
-const CharacterButton: React.FC<CharacterProps> = ({ character, onSelect, isActive, onClick }) => {
+const CharacterButton: React.FC<CharacterProps> = ({ character: CharacterProps, onSelect : (character: CharacterProps) => void, isActive, onClick }) => {
   const handleConfirm = () => {
     onSelect(character, -1);
 };

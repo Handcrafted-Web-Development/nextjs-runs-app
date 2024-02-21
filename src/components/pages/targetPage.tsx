@@ -3,8 +3,8 @@
 import '../../../public/assets/styles/main.css'
 
 import racesData from '@/services/api/races.json';
-import RaceButton from "@/components/buttons/RaceButton";
-import {Race} from "@/services/objects/Race";
+import RaceButton from "@/components/Buttons/RaceButton";
+import {RaceProps} from "@/services/interfaces/Race";
 import {ReactElement, useState} from "react";
 
 
@@ -16,7 +16,7 @@ export default function Page(): ReactElement {
       <>
         <h2>Quel est ton objectif ?</h2>
         <div>
-          {racesData.map((race: Race) => {
+          {racesData.map((race: RaceProps) => {
             return (
                 <RaceButton
                     key={race.id}
