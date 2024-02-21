@@ -7,16 +7,16 @@ export default function Page(): ReactElement {
   return (
       <>
         <h2>Quel est ton objectif ?</h2>
-        <div>
-          {racesData.map((race: Race) => {
-            return (
-                <RaceButton
-                    key={race.id}
-                    race={race}
-                />
-            );
-          })}
-        </div>
+        {/*<div>*/}
+        {/*  {racesData.map((race: Race) => {*/}
+        {/*    return (*/}
+        {/*        <RaceButton*/}
+        {/*            key={race.id}*/}
+        {/*            race={race}*/}
+        {/*        />*/}
+        {/*    );*/}
+        {/*  })}*/}
+        {/*</div>*/}
       </>
   );
 }
