@@ -1,11 +1,11 @@
-import React from "react";
+import {ReactElement} from "react";
 
 interface SkillProps {
     skill: string;
     value: number;
 }
 
-const Skill: React.FC<SkillProps> = ({skill, value}) => {
+const Skill = ({skill, value}: SkillProps): ReactElement => {
     return (
         <div data-value={value}>
             <svg className="icon">
