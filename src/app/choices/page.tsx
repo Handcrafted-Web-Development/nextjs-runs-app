@@ -3,9 +3,13 @@
 import racesData from '@/services/api/races.json';
 import RaceButton from "@/components/RaceButton";
 import {Race} from "@/services/objects/Race";
-import {ReactElement} from "react";
+import {ReactElement, useState} from "react";
+
 
 export default function Page(): ReactElement {
+
+  const [isSelected, setIsSelected] = useState<boolean>(false);
+
   return (
       <>
         <h2>Quel est ton objectif ?</h2>
@@ -14,12 +18,15 @@ export default function Page(): ReactElement {
             return (
                 <RaceButton
                     key={race.id}
-                    onClick={()=>{}}
                     race={race}
+                    onClick={() => setIsSelected(true)}
                 />
             );
           })}
         </div>
+        {isSelected ? (
+            <button></button>
+        ) : null}
       </>
   );
 }
