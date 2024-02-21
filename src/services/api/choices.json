@@ -1,0 +1,60 @@
+[
+  {
+    "label": "Camarade de classe",
+    "name": "Gile",
+    "description": "Je te propose une sortie techno au Warehouse ce vendredi soir ! Promis on va bien s’amuser mon grand.",
+    "choices": [
+      {
+        "value": "Je peux pas j'ai piscine !",
+        "place": "left"
+      },
+      {
+        "value": "C'est parti !",
+        "place": "right"
+      }
+    ],
+    "effects": [
+      {
+        "social": -20,
+        "motivation": 20,
+        "fitness": 0,
+        "money": 10
+      },
+      {
+        "social": 30,
+        "motivation": -10,
+        "fitness": -10,
+        "money": -30
+      }
+    ]
+  },
+  {
+    "label": "Ami",
+    "name": "Pierrot",
+    "description": "Il est 04 heures du matin, et Pierrot lâche sa phrase culte, `Vas-y, la der des bros`",
+    "choices": [
+      {
+        "value": "J'en ai déjà trop fait, à demain !",
+        "place": "left"
+      },
+      {
+        "value": "Tu sais me parler mon frérot !",
+        "place": "right"
+      }
+    ],
+    "effects": [
+      {
+        "social": 20,
+        "motivation": -20,
+        "fitness": -10,
+        "money": 0
+      },
+      {
+        "social": 30,
+        "motivation": -30,
+        "fitness": -20,
+        "money": 0
+      }
+    ]
+  }
+]
