@@ -1,0 +1,94 @@
+[
+    {
+      "category": "social_stat",
+      "level": 50,
+      "event": "Un ami vous fait découvrir un nouveau bar",
+      "effects": {
+        "social": 5,
+        "motivation": -10,
+        "fitness": -10,
+        "money": -10
+      }
+    },
+    {
+      "category": "social_stat",
+      "level": -50,
+      "event": "Votre petit copain vous a quitté car vous n’étiez pas assez disponible. Cela vous laisse plus de temps pour votre entraînement",
+      "effects": {
+        "social": -10,
+        "fitness": 20,
+        "money": 10
+      }
+    },
+    {
+      "category": "motivation_stat",
+      "level": 50,
+      "event": "Dans un élan de motivation, vous décidez de devenir bénévole dans une association sportive",
+      "effects": {
+        "social": 20,
+        "money": -15
+      }
+    },
+    {
+      "category": "motivation_stat",
+      "level": -50,
+      "event": "Vous en avez marre, vous ne sortez pas de rester chez vous durant 3 jours",
+      "effects": {
+        "social": -10,
+        "fitness": -15,
+        "money": 20
+      }
+    },
+    {
+      "category": "fitness_stat",
+      "level": 50,
+      "event": "Vous décidez de vous reposer car vous avez fait beaucoup de progrès, vous partez un weekend à la mer avec vos amis",
+      "effects": {
+        "social": 20,
+        "money": -10
+      }
+    },
+    {
+      "category": "fitness_stat",
+      "level": -50,
+      "event": "Vous vous blessez légèrement lors d'une séance d'entraînement",
+      "effects": {
+        "motivation": -20,
+        "fitness": -15
+      }
+    },
+    {
+      "category": "money_stat",
+      "level": 50,
+      "event": "Vous avez assez d’argent pour vous acheter de nouvelles baskets",
+      "effects": {
+        "motivation": 10,
+        "fitness": 20,
+        "money": -10
+      }
+    },
+    {
+      "category": "money_stat",
+      "level": -50,
+      "event": "Vous êtes obligé d’annuler votre abonnement Netflix pour faire des économies",
+      "effects": {
+        "social": -10,
+        "money": 20
+      }
+    },
+    {
+      "event": "C’est votre anniversaire ! Votre maman vous donne de l’argent",
+      "effects": {
+        "motivation": 10,
+        "money": 20
+      }
+    },
+    {
+      "event": "Un ouragan vous empêche d’aller courir",
+      "effects": {
+        "motivation": -10,
+        "fitness": -10
+      }
+    }
+  ]
+  
