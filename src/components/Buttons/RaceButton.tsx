@@ -7,9 +7,9 @@ import Image from "next/image";
 /**
  * @file RaceButton.tsx
  **/
-export default function RaceButton({key, race, onClick}: RaceButtonProps): ReactElement {
+export default function RaceButton({keyId, race, onClick}: RaceButtonProps): ReactElement {
   return (
-      <button key={key} onClick={onClick}>
+      <button key={keyId} onClick={onClick}>
         <div>
           <Image src={race.pathname} alt={race.name} width={69} height={69}/>
         </div>

@@ -1,7 +1,7 @@
 "use client"
 
 import racesData from '@/services/api/races.json';
-import RaceButton from "@/components/buttons/RaceButton";
+import RaceButton from "@/components/Buttons/RaceButton";
 import {RaceProps} from "@/services/interfaces/Race";
 import {ReactElement, useState} from "react";
 
