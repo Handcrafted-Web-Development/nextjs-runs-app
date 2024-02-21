@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Character } from '../objects/Character';
-import charactersData from '../characters.json';
+import { Character } from '@/services/objects/Character';
+import charactersData from '../services/api/characters.json';
 import CharacterButton from '../components/CharacterButton';
 
 const CharacterPage: React.FC = () => {
