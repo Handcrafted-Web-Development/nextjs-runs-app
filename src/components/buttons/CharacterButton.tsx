@@ -1,6 +1,6 @@
 import  {ReactElement, useState} from 'react';
 import { CharacterProps } from '@/services/interfaces/Character';
-
+import Image from "next/image";
 
 const CharacterButton = ({ character, onSelect }: {character: CharacterProps, onSelect: (character: CharacterProps) => void}): ReactElement => {
   const [showPopup, setShowPopup] = useState<boolean>(false);
@@ -21,10 +21,7 @@ const CharacterButton = ({ character, onSelect }: {character: CharacterProps, on
   return (
     <div>
       <button onClick={handleClick}>
-        <img 
-            src={`../../public/img/${character.prenom}.svg`} 
-            alt={character.prenom} 
-        />
+        <Image src={`/assets/img/characters/${character.prenom}.svg`} alt={character.prenom} width={69} height={69}/>
         <p>{character.prenom}</p>
       </button>
       {showPopup && (
