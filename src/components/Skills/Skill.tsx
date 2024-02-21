@@ -1,9 +1,5 @@
 import {ReactElement} from "react";
-
-interface SkillProps {
-    skill: string;
-    value: number;
-}
+import {SkillProps} from "@/services/interfaces/Skill";
 
 const Skill = ({skill, value}: SkillProps): ReactElement => {
     return (

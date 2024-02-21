@@ -1,9 +1,9 @@
 "use client"
 
 import React, { useState } from 'react';
-import { Character } from '../../services/objects/Character';
-import charactersData from '../../services/api/characters.json';
-import CharacterButton from '../buttons/CharacterButton';
+import { Character } from '@/services/interfaces/Character';
+import charactersData from '@/services/api/characters.json';
+import CharacterButton from '@/components/buttons/CharacterButton';
 
 const CharacterPage: React.FC = () => {
   const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(null);

@@ -1,12 +1,8 @@
-import React, { useState } from 'react';
-import { Character } from '../../services/objects/Character';
+import  {ReactElement, useState} from 'react';
+import { CharacterProps } from '@/services/interfaces/Character';
 
-interface CharacterProps {
-  character: Character;
-  onSelect: (character: Character) => void;
-}
 
-const CharacterButton: React.FC<CharacterProps> = ({ character, onSelect }) => {
+const CharacterButton = ({ character, onSelect }: {character: CharacterProps, onSelect: (character: CharacterProps) => void}): ReactElement => {
   const [showPopup, setShowPopup] = useState<boolean>(false);
 
   const handleClick = () => {
