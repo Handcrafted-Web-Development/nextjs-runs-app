@@ -1,4 +1,9 @@
 #character_choice {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+
     h2 {
         text-align: center;
     }
@@ -9,7 +14,6 @@
         flex-wrap: wrap;
 
         .character {
-
             button {
                 background-color: inherit;
                 border: none;
@@ -19,6 +23,10 @@
             }
 
             button.character-button {
+                @media screen and (min-width: 550px) {
+                    width: 200px;
+                }
+
                 &.active {
                     background-color: #eee;
                     border: 1px solid red;
@@ -32,25 +40,39 @@
                 img {
                     height: 30vw;
                     width: auto;
+
+                    @media screen and (min-width: 550px) {
+                        height: 130px;
+                    }
                 }
             }
 
             .popup {
                 position: absolute;
-                bottom: 0;
-                left: 0;
+                bottom: 20px;
+                left: 46%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 gap: 18px;
                 align-items: center;
                 text-align: center;
+                max-width: 740px;
+                width: 80%;
                 margin: 30px 15px;
                 padding: 10px;
                 background-color: #fff;
                 border: 1px solid;
                 border-radius: 30px;
+                translate: -50%;
                 z-index: 999;
+
+                @media screen and (min-width: 615px) {
+                    bottom: 20vh;
+                }
+                @media screen and (min-width: 1200px) {
+                    left: 49%;
+                }
 
                 h3,
                 p {
@@ -75,19 +97,24 @@
     }
 
     .instructions {
-        position: absolute;
-        bottom: 0;
         display: flex;
         justify-content: center;
+        width: 100%;
         z-index: 1;
 
         p {
+            max-width: 700px;
             width: 75%;
-            margin: 22vh 0;
+            margin-top: 10vh;
             padding: 20px 15px;
             text-align: center;
             border: 1px solid;
             border-radius: 30px;
+
+            @media screen and (min-width: 615px) {
+                width: 50%;
+                margin-top: 30vh;
+            }
         }
     }
 
