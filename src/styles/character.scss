@@ -8,6 +8,7 @@
         text-align: center;
         font-size: 20px;
         font-weight: bold;
+        margin: 1vh 0;
     }
 
     .flex {
@@ -36,7 +37,7 @@
 
                 &.active {
                     background-color: #eee;
-                    border: 1px solid red;
+                    border: 1px solid #D7D7D7;
                 }
 
                 p {
@@ -70,7 +71,7 @@
                 margin: 30px 15px 15px;
                 padding: 10px;
                 background-color: #fff;
-                border: 1px solid;
+                border: 1px solid #D7D7D7;
                 border-radius: 30px;
                 translate: -50%;
                 z-index: 999;
@@ -119,7 +120,7 @@
             margin-top: 10vh;
             padding: 20px 15px;
             text-align: center;
-            border: 1px solid;
+            border: 1px solid #D7D7D7;
             border-radius: 30px;
 
             @media screen and (min-width: 615px) {

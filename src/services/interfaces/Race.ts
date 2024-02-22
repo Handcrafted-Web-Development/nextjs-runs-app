@@ -13,5 +13,6 @@ export interface RaceProps {
 
 export interface RaceButtonProps {
   race: RaceProps;
-  onClick: MouseEventHandler<HTMLButtonElement>;
+  isActive: boolean;
+  onClick: (race: RaceProps) => void;
 }
