@@ -15,7 +15,7 @@ const Index = ({ buttonClick, label, name, description, choices }: Card): ReactE
           {choices?.map((choice, index) => (
             <Button
               key={index}
-              onClick={buttonClick}
+              onClick={() => buttonClick(choice)}
               value={choice.value}
               choicesLenght={choices.length}
               choicePlace={choice.place}

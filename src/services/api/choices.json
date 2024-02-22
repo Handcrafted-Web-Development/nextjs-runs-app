@@ -7,7 +7,7 @@
       {
         "value": "Je peux pas j'ai piscine !",
         "place": "left",
-        "effect": {
+        "effects": {
           "social": -20,
           "motivation": 20,
           "fitness": 0,
@@ -17,7 +17,7 @@
       {
         "value": "C'est parti !",
         "place": "right",
-        "effect": {
+        "effects": {
           "social": 30,
           "motivation": -10,
           "fitness": -10,
@@ -34,7 +34,7 @@
       {
         "value": "J'en ai déjà trop fait, à demain !",
         "place": "left",
-        "effect": {
+        "effects": {
           "social": 20,
           "motivation": -20,
           "fitness": -10,
@@ -44,7 +44,7 @@
       {
         "value": "Tu sais me parler mon frérot !",
         "place": "right",
-        "effect": {
+        "effects": {
           "social": 30,
           "motivation": -30,
           "fitness": -20,
@@ -61,7 +61,7 @@
       {
         "value": "Non, je préfère dormir et économiser",
         "place": "left",
-        "effect": {
+        "effects": {
           "social": -10,
           "motivation": -10,
           "fitness": -30,
@@ -71,7 +71,7 @@
       {
         "value": "Carrément !",
         "place": "right",
-        "effect": {
+        "effects": {
           "social": 10,
           "motivation": 20,
           "fitness": 20,

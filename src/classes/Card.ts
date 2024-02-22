@@ -13,6 +13,4 @@ export class Card {
     this.description = description;
     this.choices = choices;
   }
-
-  public buttonClick = () => {};
 }
