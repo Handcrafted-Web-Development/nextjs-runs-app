@@ -1,6 +1,6 @@
 export interface CharacterProps {
     id: number;
-    prenom: string;
+    name: string;
     description: string;
     social_stat: number;
     motivation_stat: number;
