@@ -10,25 +10,36 @@ const CharacterPage = ({gameInstance, setStage}: {gameInstance: GameInstance, se
   const [selectedCharacter, setSelectedCharacter] = useState<CharacterProps | null>(null);
   const [activeButton, setActiveButton] = useState<number | null>(null);
 
-  const handleSelect = (character: CharacterProps, index: number) => {
-    setSelectedCharacter(character);
+  const handleSelect = (CharacterProps: CharacterProps) => {
+      setSelectedCharacter(CharacterProps);
+  };
+
+  const handleClick = (id: number, alreadyActive: boolean) => {
+    if(alreadyActive){
+      setActiveButton(id)
+    } else {
+      setActiveButton(null)
+    }
   };
 
   return (
     <div id='character_choice'>
-      <h1>Choisissez votre personnage :</h1>
+      <h2>Choisis ton personnage :</h2>
       <div className='flex'>
-        {charactersData.map((CharacterProps: CharacterProps, index: number) => (
+        {charactersData.map((CharacterProps: CharacterProps) => (
           <CharacterButton 
             key={CharacterProps.id}
             CharacterProps={CharacterProps}
-            onSelect={(character: CharacterProps) => handleSelect(character, index)}
-            isActive={activeButton === index}
-            onClick={() => setActiveButton(index)}
             gameInstance={gameInstance}
             setStage={setStage}
+            onClick={(id: number, alreadyActive: boolean) => handleClick(id, alreadyActive)}
+            onSelect={(character: CharacterProps) => handleSelect(character)}
+            isActive={activeButton === CharacterProps.id}
           />
         ))}
+      </div>
+      <div>
+        <p>Clique sur un personnage pour voir ses statistiques </p>
       </div>
       {selectedCharacter && (
         <div className='selected-character'>

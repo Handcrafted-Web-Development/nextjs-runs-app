@@ -11,16 +11,13 @@ interface CharacterButtonProps {
   CharacterProps: CharacterProps;
   onSelect: (character: CharacterProps) => void;
   isActive: boolean;
-  onClick: () => void;
+  onClick: (id: number, index: boolean) => void;
   gameInstance: GameInstance;
   setStage: Dispatch<SetStateAction<string>>;
 }
 
 const CharacterButton = ({ CharacterProps, onSelect, isActive, onClick, gameInstance, setStage }: CharacterButtonProps): ReactElement => {
   const [showPopup, setShowPopup] = useState<boolean>(false);
-  const handleClick = () => {
-    setShowPopup(true);
-  };
 
   const handleConfirm = () => {
     onSelect(CharacterProps);
@@ -28,8 +25,12 @@ const CharacterButton = ({ CharacterProps, onSelect, isActive, onClick, gameInst
     gameInstance.getCharacter(CharacterProps, setStage)
   };
 
-  const handleCancel = () => {
-    setShowPopup(false);
+  const handleClick = () => {
+    if (isActive) {
+      onClick(CharacterProps.id, false);
+    } else {
+      onClick(CharacterProps.id, true);
+    }
   };
 
   return (
