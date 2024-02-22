@@ -1,11 +1,11 @@
 import racesData from '@/services/api/races.json';
 import RaceButton from "@/components/Buttons/RaceButton";
 import {RaceProps} from "@/services/interfaces/Race";
-import {ReactElement, useState} from "react";
+import {Dispatch, ReactElement, SetStateAction, useState} from "react";
 import {GameInstance} from "@/classes/GameInstance";
 
 
-export default function TargetChoice({gameInstance}: {gameInstance: GameInstance}): ReactElement {
+export default function TargetChoice({gameInstance, setStage}: {gameInstance: GameInstance, setStage: Dispatch<SetStateAction<string>>}): ReactElement {
 
   const [isSelected, setIsSelected] = useState<boolean>(false);
   const [race, setRace] = useState<RaceProps>();
@@ -15,8 +15,8 @@ export default function TargetChoice({gameInstance}: {gameInstance: GameInstance
         setIsSelected(true)
     }
 
-    const handleButtonSubmitClick = (race: RaceProps) => {
-        gameInstance.getRace(Object.entries(race))
+    const buttonSubmitClick = (race: RaceProps, setStage: Dispatch<SetStateAction<string>>) => {
+        gameInstance.getTarget(race, setStage)
     }
 
   return (
@@ -30,11 +30,11 @@ export default function TargetChoice({gameInstance}: {gameInstance: GameInstance
                     race={race}
                     onClick={() => handleButtonRaceClick(race)}
                 />
-            );
+            )
           })}
         </div>
         {isSelected ? (
-            <button onClick={() => handleButtonSubmitClick(race)}>Gooo !</button>
+            <button onClick={() => buttonSubmitClick(race as RaceProps, setStage)}>Gooo !</button>
         ) : null}
       </>
   );

@@ -1,11 +1,12 @@
 "use client"
 
-import React, { useState } from 'react';
+import {Dispatch, ReactElement, SetStateAction, useState} from 'react';
 import { CharacterProps } from '@/services/interfaces/Character';
 import charactersData from '@/services/api/characters.json';
 import CharacterButton from '@/components/Buttons/CharacterButton';
+import {GameInstance} from "@/classes/GameInstance";
 
-const CharacterPage: React.FC = () => {
+const CharacterPage = ({gameInstance, setStage}: {gameInstance: GameInstance, setStage: Dispatch<SetStateAction<string>>}): ReactElement => {
   const [selectedCharacter, setSelectedCharacter] = useState<CharacterProps | null>(null);
 
   const handleSelect = (character: CharacterProps) => {
@@ -21,12 +22,14 @@ const CharacterPage: React.FC = () => {
             key={character.id} 
             character={character} 
             onSelect={handleSelect}
+            gameInstance={gameInstance}
+            setStage={setStage}
           />
         ))}
       </div>
       {selectedCharacter && (
         <div>
-          <h2>{selectedCharacter.prenom}</h2>
+          <h2>{selectedCharacter.name}</h2>
         </div>
       )}
     </div>
