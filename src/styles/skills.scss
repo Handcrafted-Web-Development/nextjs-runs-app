@@ -1,0 +1,58 @@
+.skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    .skill {
+        margin: 0 5px;
+        width: 70px;
+        height: 90px;
+        background-color: grey;
+        position: relative;
+        display: flex;
+        border-radius: 10px;
+        .skill_content {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .icon {
+            width: 50px;
+            height: 50px;
+        }
+        .progress {
+            display: block;
+            align-self: flex-end;
+            width: 100%;
+            background-color: blue;
+            border-radius: 0 0 10px 10px;
+        }
+        &.Mental {
+            background-color: #DFF5FF;
+            .progress {
+                background-color: #A0E3FF;
+            }
+        }
+        &.Social {
+            background-color: #FEFFDF;
+            .progress {
+                background-color: #FDFFA0;
+            }
+        }
+        &.Argent {
+            background-color: #FFEADF;
+            .progress {
+                background-color: #FFCEA0;
+            }
+        }
+        &.Santé {
+            background-color: #FFDFFC;
+            .progress {
+                background-color: #F7A0FF;
+            }
+        }
+    }
+}
