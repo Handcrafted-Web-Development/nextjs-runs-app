@@ -1,4 +1,5 @@
-import { ReactElement } from 'react';
+import { ReactElement } from "react";
+import '@/styles/timeline.scss';
 
 interface TimelineProps {
   currentStep: number;
@@ -15,5 +16,5 @@ export default function Timeline({ currentStep, steps }: TimelineProps): ReactEl
       ></div>,
     );
   }
-  return <div>{stepsArray}</div>;
+  return <div className="timeline">{stepsArray}</div>;
 }
