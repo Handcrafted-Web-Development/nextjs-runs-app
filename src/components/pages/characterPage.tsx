@@ -44,12 +44,12 @@ const CharacterPage = ({
           />
         ))}
       </div>
-      <div>
+      <div className='instructions'>
         <p>Clique sur un personnage pour voir ses statistiques </p>
       </div>
       {selectedCharacter && (
-        <div className="selected-character">
-          <h2>{selectedCharacter.name}</h2>
+        <div className='selected-character'>
+          <h3>{selectedCharacter.name}</h3>
         </div>
       )}
     </div>
