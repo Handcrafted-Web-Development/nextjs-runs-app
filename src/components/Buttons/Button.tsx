@@ -1,3 +1,4 @@
+import "@/styles/button.scss"
 import { ButtonProps } from '@/services/interfaces/Button';
 
 const Button = ({ value, choicesLenght, choicePlace }: ButtonProps) => {
