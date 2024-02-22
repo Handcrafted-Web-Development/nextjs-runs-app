@@ -9,10 +9,10 @@
       {
         "value": "Gooo !",
         "effects": {
-            "social": 5,
-            "motivation": -10,
-            "fitness": -10,
-            "money": -10
+          "social": 5,
+          "motivation": -10,
+          "fitness": -10,
+          "money": -10
         }
       }
     ]
@@ -27,9 +27,9 @@
       {
         "value": "Oh...",
         "effects": {
-            "social": -10,
-            "fitness": 20,
-            "money": 10
+          "social": -10,
+          "fitness": 20,
+          "money": 10
         }
       }
     ]
@@ -44,9 +44,9 @@
       {
         "value": "J'aime le bénévolat !",
         "effects": {
-            "social": 20,
-            "money": -15
-          }
+          "social": 20,
+          "money": -15
+        }
       }
     ]
   },
@@ -60,10 +60,10 @@
       {
         "value": "C'est la déprime...",
         "effects": {
-            "social": -10,
-            "fitness": -15,
-            "money": 20
-          }
+          "social": -10,
+          "fitness": -15,
+          "money": 20
+        }
       }
     ]
   },
@@ -77,9 +77,9 @@
       {
         "value": "Je suis KO x_x",
         "effects": {
-            "social": 20,
-            "money": -10
-          }
+          "social": 20,
+          "money": -10
+        }
       }
     ]
   },
@@ -93,9 +93,9 @@
       {
         "value": "J'ai mal...",
         "effects": {
-            "motivation": -20,
-            "fitness": -15
-          }
+          "motivation": -20,
+          "fitness": -15
+        }
       }
     ]
   },
@@ -109,10 +109,10 @@
       {
         "value": "Je vais courir vite !!",
         "effects": {
-            "motivation": 10,
-            "fitness": 20,
-            "money": -10
-          }
+          "motivation": 10,
+          "fitness": 20,
+          "money": -10
+        }
       }
     ]
   },
@@ -126,9 +126,9 @@
       {
         "value": "J'avais pas fini ma série...",
         "effects": {
-            "social": -10,
-            "money": 20
-          }
+          "social": -10,
+          "money": 20
+        }
       }
     ]
   },
@@ -140,9 +140,9 @@
       {
         "value": "Je suis riche !",
         "effects": {
-            "motivation": 10,
-            "money": 20
-          }
+          "motivation": 10,
+          "money": 20
+        }
       }
     ]
   },
@@ -154,11 +154,10 @@
       {
         "value": "C'est la tempête :o",
         "effects": {
-            "motivation": -10,
-            "fitness": -10
-          }
+          "motivation": -10,
+          "fitness": -10
+        }
       }
     ]
   }
 ]
-  

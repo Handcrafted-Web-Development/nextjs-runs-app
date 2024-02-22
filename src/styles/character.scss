@@ -1,5 +1,8 @@
-
 #character_choice {
+  .flex {
+    justify-content: center;
+    gap: 10vw;
+    flex-wrap: wrap;
 
     h2 {
         text-align: center;
