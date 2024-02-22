@@ -1,4 +1,4 @@
-import "@/styles/card.scss";
+import '@/styles/card.scss';
 import { ReactElement } from 'react';
 import Button from '@/components/Buttons/Button';
 import { CardProps } from '@/services/interfaces/Card';

@@ -6,35 +6,35 @@ import choicesJson from '@/services/api/choices.json';
 import TargetChoice from '@/components/pages/targetChoice';
 import CharacterChoice from '@/components/pages/characterPage';
 import GameLayout from '@/components/Layouts/GameLayout';
-import {GameInstance} from '@/classes/GameInstance';
-import {useEffect, useState} from 'react';
+import { GameInstance } from '@/classes/GameInstance';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
-    const gameInstance = new GameInstance();
+  const gameInstance = new GameInstance();
 
-    const [content, setContent] = useState(<div>Chargement...</div>);
+  const [content, setContent] = useState(<div>Chargement...</div>);
 
-    const [stage, setStage] = useState(() => (typeof window !== 'undefined' ? localStorage.getItem('stage') ?? '' : ''));
+  const [stage, setStage] = useState(() => (typeof window !== 'undefined' ? localStorage.getItem('stage') ?? '' : ''));
 
-    useEffect(() => {
-        getContent();
-    }, [stage]);
+  useEffect(() => {
+    getContent();
+  }, [stage]);
 
-    const getContent = () => {
-        if (!stage) {
-            localStorage.setItem('stage', 'target');
-            setStage(localStorage.getItem('stage') ?? '');
-        }
-        if (stage === 'target') {
-            setContent(<TargetChoice gameInstance={gameInstance} setStage={setStage}/>);
-        }
-        if (stage === 'character') {
-            setContent(<CharacterChoice gameInstance={gameInstance} setStage={setStage}/>);
-        }
-        if (stage === 'game') {
-            setContent(<GameLayout choicesJson={choicesJson}/>);
-        }
-    };
+  const getContent = () => {
+    if (!stage) {
+      localStorage.setItem('stage', 'target');
+      setStage(localStorage.getItem('stage') ?? '');
+    }
+    if (stage === 'target') {
+      setContent(<TargetChoice gameInstance={gameInstance} setStage={setStage} />);
+    }
+    if (stage === 'character') {
+      setContent(<CharacterChoice gameInstance={gameInstance} setStage={setStage} />);
+    }
+    if (stage === 'game') {
+      setContent(<GameLayout choicesJson={choicesJson} />);
+    }
+  };
 
-    return <div>{content}</div>;
+  return <div>{content}</div>;
 }
