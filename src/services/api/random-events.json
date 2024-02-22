@@ -7,15 +7,13 @@
     "description": "Un ami vous fait découvrir un nouveau bar",
     "choices": [
       {
-        "value": "Gooo !"
-      }
-    ],
-    "effects": [
-      {
-        "social": 5,
-        "motivation": -10,
-        "fitness": -10,
-        "money": -10
+        "value": "Gooo !",
+        "effects": {
+            "social": 5,
+            "motivation": -10,
+            "fitness": -10,
+            "money": -10
+        }
       }
     ]
   },
@@ -27,14 +25,12 @@
     "description": "Votre petit copain vous a quitté car vous n’étiez pas assez disponible. Cela vous laisse plus de temps pour votre entraînement",
     "choices": [
       {
-        "value": "Oh..."
-      }
-    ],
-    "effects": [
-      {
-        "social": -10,
-        "fitness": 20,
-        "money": 10
+        "value": "Oh...",
+        "effects": {
+            "social": -10,
+            "fitness": 20,
+            "money": 10
+        }
       }
     ]
   },
@@ -46,13 +42,11 @@
     "description": "Dans un élan de motivation, vous décidez de devenir bénévole dans une association sportive",
     "choices": [
       {
-        "value": "J'aime le bénévolat !"
-      }
-    ],
-    "effects": [
-      {
-        "social": 20,
-        "money": -15
+        "value": "J'aime le bénévolat !",
+        "effects": {
+            "social": 20,
+            "money": -15
+          }
       }
     ]
   },
@@ -64,14 +58,12 @@
     "description": "Vous en avez marre, vous ne sortez pas de rester chez vous durant 3 jours",
     "choices": [
       {
-        "value": "C'est la déprime..."
-      }
-    ],
-    "effects": [
-      {
-        "social": -10,
-        "fitness": -15,
-        "money": 20
+        "value": "C'est la déprime...",
+        "effects": {
+            "social": -10,
+            "fitness": -15,
+            "money": 20
+          }
       }
     ]
   },
@@ -83,13 +75,11 @@
     "description": "Vous décidez de vous reposer car vous avez fait beaucoup de progrès, vous partez un weekend à la mer avec vos amis",
     "choices": [
       {
-        "value": "Je suis KO x_x"
-      }
-    ],
-    "effects": [
-      {
-        "social": 20,
-        "money": -10
+        "value": "Je suis KO x_x",
+        "effects": {
+            "social": 20,
+            "money": -10
+          }
       }
     ]
   },
@@ -101,13 +91,11 @@
     "description": "Vous vous blessez légèrement lors d'une séance d'entraînement",
     "choices": [
       {
-        "value": "J'ai mal..."
-      }
-    ],
-    "effects": [
-      {
-        "motivation": -20,
-        "fitness": -15
+        "value": "J'ai mal...",
+        "effects": {
+            "motivation": -20,
+            "fitness": -15
+          }
       }
     ]
   },
@@ -119,14 +107,12 @@
     "description": "Vous avez assez d’argent pour vous acheter de nouvelles baskets",
     "choices": [
       {
-        "value": "Je vais courir vite !!"
-      }
-    ],
-    "effects": [
-      {
-        "motivation": 10,
-        "fitness": 20,
-        "money": -10
+        "value": "Je vais courir vite !!",
+        "effects": {
+            "motivation": 10,
+            "fitness": 20,
+            "money": -10
+          }
       }
     ]
   },
@@ -138,13 +124,11 @@
     "description": "Vous êtes obligé d’annuler votre abonnement Netflix pour faire des économies",
     "choices": [
       {
-        "value": "J'avais pas fini ma série..."
-      }
-    ],
-    "effects": [
-      {
-        "social": -10,
-        "money": 20
+        "value": "J'avais pas fini ma série...",
+        "effects": {
+            "social": -10,
+            "money": 20
+          }
       }
     ]
   },
@@ -154,13 +138,11 @@
     "description": "C’est votre anniversaire ! Votre maman vous donne de l’argent",
     "choices": [
       {
-        "value": "Je suis riche !"
-      }
-    ],
-    "effects": [
-      {
-        "motivation": 10,
-        "money": 20
+        "value": "Je suis riche !",
+        "effects": {
+            "motivation": 10,
+            "money": 20
+          }
       }
     ]
   },
@@ -170,13 +152,11 @@
     "description": "Un ouragan vous empêche d’aller courir",
     "choices": [
       {
-        "value": "C'est la tempête :o"
-      }
-    ],
-    "effects": [
-      {
-        "motivation": -10,
-        "fitness": -10
+        "value": "C'est la tempête :o",
+        "effects": {
+            "motivation": -10,
+            "fitness": -10
+          }
       }
     ]
   }

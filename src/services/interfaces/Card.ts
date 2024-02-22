@@ -7,14 +7,14 @@ export interface CardProps {
 
 export interface ChoiceProps {
     value: string;
-    place?: 'left' | 'right';
-    effects: EffectProps[];
+    place?: string;
+    effects?: EffectProps;
 }
 
 interface EffectProps {
-    social: number;
-    motivation: number;
-    fitness : number;
-    money: number;
+    social?: number;
+    motivation?: number;
+    fitness? : number;
+    money?: number;
 }
 
