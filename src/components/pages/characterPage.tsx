@@ -20,11 +20,11 @@ const CharacterPage: React.FC = () => {
     <div id='character_choice'>
       <h1>Choisissez votre personnage :</h1>
       <div className='flex'>
-        {charactersData.map((character: CharacterProps, index: number) => (
+        {charactersData.map((CharacterProps: CharacterProps, index: number) => (
           <CharacterButton 
-            key={character.id} 
-            character={character} 
-            onSelect={(character: Character) => handleSelect(character, index)}
+            key={CharacterProps.id} 
+            CharacterProps={CharacterProps} 
+            onSelect={(character: CharacterProps) => handleSelect(character, index)}
             isActive={activeButton === index}
             onClick={() => setActiveButton(index)}
           />
