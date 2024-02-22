@@ -3,11 +3,12 @@
     "label": "Camarade de classe",
     "name": "Gile",
     "description": "Je te propose une sortie techno au Warehouse ce vendredi soir ! Promis on va bien s’amuser mon grand.",
+    "img": "../../public/assets/img/cards/club.png",
     "choices": [
       {
         "value": "Je peux pas j'ai piscine !",
         "place": "left",
-        "effect": {
+        "effects": {
           "social": -20,
           "motivation": 20,
           "fitness": 0,
@@ -17,7 +18,7 @@
       {
         "value": "C'est parti !",
         "place": "right",
-        "effect": {
+        "effects": {
           "social": 30,
           "motivation": -10,
           "fitness": -10,
@@ -30,11 +31,12 @@
     "label": "Ami",
     "name": "Pierrot",
     "description": "Il est 04 heures du matin, et Pierrot lâche sa phrase culte, `Vas-y, la der des bros`",
+    "img": "../../public/assets/img/cards/drink.png",
     "choices": [
       {
         "value": "J'en ai déjà trop fait, à demain !",
         "place": "left",
-        "effect": {
+        "effects": {
           "social": 20,
           "motivation": -20,
           "fitness": -10,
@@ -44,7 +46,7 @@
       {
         "value": "Tu sais me parler mon frérot !",
         "place": "right",
-        "effect": {
+        "effects": {
           "social": 30,
           "motivation": -30,
           "fitness": -20,
@@ -55,9 +57,10 @@
   },
   {
     "label": "Coach",
-    "name": "Louis",
-    "description": "Je te propose une séance intenssive demain matin à 6 heures, ça coûte 50€ t'es partant ?",
-    "choices": [
+    "name": "Luis",
+    "description": "Je te propose une séance intensive demain matin à 6 heures, ça coûte 50€ t'es partant ?",
+    "img": "../../public/assets/img/cards/gym.png",
+    "choicess": [
       {
         "value": "Non, je préfère dormir et économiser",
         "place": "left",
@@ -71,11 +74,67 @@
       {
         "value": "Carrément !",
         "place": "right",
-        "effect": {
+        "effects": {
           "social": 10,
           "motivation": 20,
           "fitness": 20,
           "money": -30
+        }
+      }
+    ]
+  },
+  {
+    "label": "Amie",
+    "name": "Karla",
+    "description": "Ca te dit un petit burger ce midi ?",
+    "img": "../../public/assets/img/cards/restaurant.png",
+    "choicess": [
+      {
+        "value": "Non, je vais me faire à manger chez moi",
+        "place": "left",
+        "effect": {
+          "social": -20,
+          "motivation": 0,
+          "fitness": 10,
+          "money": 20
+        }
+      },
+      {
+        "value": "J'ai hâte !",
+        "place": "right",
+        "effects": {
+          "social": 30,
+          "motivation": 10,
+          "fitness": -20,
+          "money": -20
+        }
+      }
+    ]
+  },
+  {
+    "label": "Patron",
+    "name": "Mme Boss",
+    "description": "On a besoin de toi ce soir pour un dossier, tes heures sup seront payées bien sûr.",
+    "img": "../../public/assets/img/cards/work.png",
+    "choicess": [
+      {
+        "value": "Pas possible, j'ai prévu d'aller courir ce soir",
+        "place": "left",
+        "effect": {
+          "social": 0,
+          "motivation": 20,
+          "fitness": 10,
+          "money": -10
+        }
+      },
+      {
+        "value": "Ok, pas de problème",
+        "place": "right",
+        "effects": {
+          "social": 0,
+          "motivation": -30,
+          "fitness": -10,
+          "money": 30
         }
       }
     ]
