@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import '@/styles/timeline.scss';
 
 interface TimelineProps {
-  currentStep: number;
+  currentStep: string;
   steps: number;
 }
 
@@ -11,7 +11,7 @@ export default function Timeline({ currentStep, steps }: TimelineProps): ReactEl
   for (let index = 0; index < steps; index++) {
     stepsArray.push(
       <div
-        className={`step ${index === currentStep ? 'currentStep' : index < currentStep ? 'previousStep' : ''}`}
+        className={`step ${index === Number(currentStep) ? 'currentStep' : index < Number(currentStep) ? 'previousStep' : ''}`}
         key={index}
       ></div>,
     );

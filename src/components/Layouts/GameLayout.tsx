@@ -4,8 +4,16 @@ import Timeline from '@/components/Timeline';
 import CardComponent from '@/components/Card';
 import { Card } from '@/classes/Card';
 import { ChoiceProps } from '@/services/interfaces/Card';
+import { GameInstance } from '@/classes/GameInstance';
+import { log } from 'node:util';
 
-const GameLayout = ({ choicesJson }: { choicesJson: Card[] }): ReactElement => {
+const GameLayout = ({
+  choicesJson,
+  gameInstance,
+}: {
+  choicesJson: Card[];
+  gameInstance: GameInstance;
+}): ReactElement => {
   const [cards, setCards] = useState<Card[]>();
   const setCard = (item: Card) => {
     const newCard = new Card(item.label, item.name, item.description, item.choices);
@@ -62,10 +70,12 @@ const GameLayout = ({ choicesJson }: { choicesJson: Card[] }): ReactElement => {
     />
   ));
 
+  let currentStep = gameInstance.getTimeline() ?? '';
+
   return (
     <>
       <Skills />
-      <Timeline currentStep={4} steps={14} />
+      <Timeline currentStep={currentStep} steps={14} />
       <div className="cards">{cardComponents}</div>
     </>
   );

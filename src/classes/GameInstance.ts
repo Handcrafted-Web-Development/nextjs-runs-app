@@ -28,5 +28,11 @@ export class GameInstance {
     localStorage.setItem('motivation_stat', String(choice.motivation_stat));
     localStorage.setItem('fitness_stat', String(choice.fitness_stat));
     localStorage.setItem('money_stat', String(choice.money_stat));
+    localStorage.setItem('timeline', String(0));
+  };
+
+  public getTimeline = () => {
+    console.log(localStorage.getItem('timeline'));
+    return localStorage.getItem('timeline');
   };
 }

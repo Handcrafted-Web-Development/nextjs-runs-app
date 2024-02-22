@@ -33,7 +33,7 @@ export default function Home() {
       setContent(<CharacterChoice gameInstance={gameInstance} setStage={setStage} />);
     }
     if (stage === 'game') {
-      setContent(<GameLayout choicesJson={choicesJson as Card[]} />);
+      setContent(<GameLayout gameInstance={gameInstance} choicesJson={choicesJson as Card[]} />);
     }
   };
 
