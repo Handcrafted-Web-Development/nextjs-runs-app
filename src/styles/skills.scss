@@ -6,7 +6,7 @@
     .skill {
         margin: 0 5px;
         width: 70px;
-        height: 90px;
+        height: 100px;
         background-color: grey;
         position: relative;
         display: flex;
@@ -29,6 +29,9 @@
             width: 100%;
             background-color: blue;
             border-radius: 0 0 10px 10px;
+        }
+        .progress-100 {
+            border-radius: 10px;
         }
         &.Mental {
             background-color: #DFF5FF;
