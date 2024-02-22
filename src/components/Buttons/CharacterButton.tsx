@@ -1,5 +1,5 @@
-import '../../../public/assets/styles/main.css';
-import '../../../public/assets/styles/character.css';
+import '@/styles/main.scss'
+import '@/styles/character.scss'
 
 import { Dispatch, ReactElement, SetStateAction, useState } from 'react';
 import { CharacterProps } from '@/services/interfaces/Character';
