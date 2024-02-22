@@ -18,9 +18,6 @@
   height: 30vw;
   width: auto;
 }
-#character_choice .flex button p {
-  color: #000;
-}
 #character_choice .flex .popup {
   position: absolute;
   bottom: 0;
@@ -33,13 +30,11 @@
   height: 300px;
   text-align: center;
   background-color: #fff;
-  color: #000;
   z-index: 999;
 }
 #character_choice .flex .popup button {
   width: -moz-fit-content;
   width: fit-content;
   padding: 15px 30px;
-  color: #000;
   border: 1px solid;
 }/*# sourceMappingURL=character.css.map */

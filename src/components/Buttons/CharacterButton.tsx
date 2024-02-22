@@ -8,28 +8,28 @@ import Image from "next/image";
 
 interface CharacterButton {
   CharacterProps: CharacterProps;
-  onSelect: (character: CharacterProps, index: number) => void;
+  onSelect: (character: CharacterProps) => void;
   isActive: boolean;
-  onClick: () => void;
+  onClick: (id: number, index: boolean) => void;
 }
 
 const CharacterButton: React.FC<CharacterButton> = ({ CharacterProps, onSelect, isActive, onClick }) => {
   const handleConfirm = () => {
-    onSelect(CharacterProps, -1);
-};
+    onSelect(CharacterProps);
+  };
 
   const handleClick = () => {
     if (isActive) {
-      onSelect(CharacterProps, -1);
+      onClick(CharacterProps.id, false);
     } else {
-      onClick();
+      onClick(CharacterProps.id, true);
     }
   };
 
   return (
     <div>
       <button className={isActive ? 'character-button active' : 'character-button'} onClick={handleClick}>
-        <Image src={`/assets/img/characters/${CharacterProps.prenom}.svg`} alt={CharacterProps.prenom} width={69} height={69}/>
+        <Image src={`/assets/img/characters/${CharacterProps.prenom}.svg`} alt={CharacterProps.prenom} width={69} height={69} />
         <p>{CharacterProps.prenom}</p>
       </button>
       {isActive && (
