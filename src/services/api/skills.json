@@ -1,18 +1,18 @@
 [
   {
     "name": "Social",
-    "value" : 10
+    "value": 10
   },
   {
     "name": "Argent",
-    "value" : 20
+    "value": 20
   },
   {
     "name": "Mental",
-    "value" : 30
+    "value": 30
   },
   {
     "name": "Santé",
-    "value" : 40
+    "value": 40
   }
 ]
