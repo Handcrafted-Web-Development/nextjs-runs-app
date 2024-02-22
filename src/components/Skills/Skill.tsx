@@ -1,14 +1,14 @@
-import {ReactElement, useEffect, useState} from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import { SkillProps } from '@/services/interfaces/Skill';
 
 import '@/styles/skills.scss';
 
 const Skill = ({ name, value }: SkillProps): ReactElement => {
-    const [valueSkill, setValueSkill] = useState(0)
+  const [valueSkill, setValueSkill] = useState(0);
 
-    useEffect(() => {
-        setValueSkill(value);
-    }, [value]);
+  useEffect(() => {
+    setValueSkill(value);
+  }, [value]);
 
   return (
     <div
