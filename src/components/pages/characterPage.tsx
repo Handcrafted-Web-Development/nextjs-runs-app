@@ -1,14 +1,12 @@
 "use client"
 
-import '../../../public/assets/styles/main.css'
-import '../../../public/assets/styles/character.css'
-
-import React, { useState } from 'react';
+import {Dispatch, ReactElement, SetStateAction, useState} from 'react';
 import { CharacterProps } from '@/services/interfaces/Character';
 import charactersData from '@/services/api/characters.json';
 import CharacterButton from '@/components/Buttons/CharacterButton';
+import {GameInstance} from "@/classes/GameInstance";
 
-const CharacterPage: React.FC = () => {
+const CharacterPage = ({gameInstance, setStage}: {gameInstance: GameInstance, setStage: Dispatch<SetStateAction<string>>}): ReactElement => {
   const [selectedCharacter, setSelectedCharacter] = useState<CharacterProps | null>(null);
   const [activeButton, setActiveButton] = useState<number | null>(null);
 
@@ -20,19 +18,21 @@ const CharacterPage: React.FC = () => {
     <div id='character_choice'>
       <h1>Choisissez votre personnage :</h1>
       <div className='flex'>
-        {charactersData.map((character: CharacterProps, index: number) => (
+        {charactersData.map((CharacterProps: CharacterProps, index: number) => (
           <CharacterButton 
-            key={character.id} 
-            character={character} 
-            onSelect={(character: Character) => handleSelect(character, index)}
+            key={CharacterProps.id}
+            CharacterProps={CharacterProps}
+            onSelect={(character: CharacterProps) => handleSelect(character, index)}
             isActive={activeButton === index}
             onClick={() => setActiveButton(index)}
+            gameInstance={gameInstance}
+            setStage={setStage}
           />
         ))}
       </div>
       {selectedCharacter && (
         <div className='selected-character'>
-          <h2>{selectedCharacter.prenom}</h2>
+          <h2>{selectedCharacter.name}</h2>
         </div>
       )}
     </div>
