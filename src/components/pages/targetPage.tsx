@@ -1,6 +1,6 @@
 'use client';
 
-import '@/styles/main.scss'
+import '@/styles/main.scss';
 
 import racesData from '@/services/api/races.json';
 import RaceButton from '@/components/Buttons/RaceButton';

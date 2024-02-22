@@ -1,5 +1,5 @@
-import '@/styles/main.scss'
-import '@/styles/character.scss'
+import '@/styles/main.scss';
+import '@/styles/character.scss';
 
 import { Dispatch, ReactElement, SetStateAction, useState } from 'react';
 import { CharacterProps } from '@/services/interfaces/Character';
