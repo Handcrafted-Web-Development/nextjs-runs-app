@@ -11,9 +11,9 @@ export default function Timeline({ currentStep, steps }: TimelineProps): ReactEl
   for (let index = 0; index < steps; index++) {
     stepsArray.push(
       <div
-        className={`step ${index === currentStep ? "currentStep" : index < currentStep ? "previousStep" : ""}`}
+        className={`step ${index === currentStep ? 'currentStep' : index < currentStep ? 'previousStep' : ''}`}
         key={index}
-      ></div>
+      ></div>,
     );
   }
   return <div className="timeline">{stepsArray}</div>;

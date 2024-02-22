@@ -1,11 +1,12 @@
+import '@/styles/main.scss';
+import '@/styles/character.scss';
 
-import '@/styles/main.scss'
-import '@/styles/character.scss'
-
-import {Dispatch, ReactElement, SetStateAction, useState} from 'react';
+import { Dispatch, ReactElement, SetStateAction, useState } from 'react';
 import { CharacterProps } from '@/services/interfaces/Character';
 import Image from "next/image";
 import {GameInstance} from "@/classes/GameInstance";
+import Skill from "@/components/Skills/Skill";
+import SkillsJson from "@/services/api/skills.json"
 
 interface CharacterButtonProps {
   CharacterProps: CharacterProps;
@@ -16,13 +17,20 @@ interface CharacterButtonProps {
   setStage: Dispatch<SetStateAction<string>>;
 }
 
-const CharacterButton = ({ CharacterProps, onSelect, isActive, onClick, gameInstance, setStage }: CharacterButtonProps): ReactElement => {
+const CharacterButton = ({
+  CharacterProps,
+  onSelect,
+  isActive,
+  onClick,
+  gameInstance,
+  setStage,
+}: CharacterButtonProps): ReactElement => {
   const [showPopup, setShowPopup] = useState<boolean>(false);
 
   const handleConfirm = () => {
     onSelect(CharacterProps);
     setShowPopup(false);
-    gameInstance.getCharacter(CharacterProps, setStage)
+    gameInstance.getCharacter(CharacterProps, setStage);
   };
 
   const handleClick = () => {
@@ -34,15 +42,25 @@ const CharacterButton = ({ CharacterProps, onSelect, isActive, onClick, gameInst
   };
 
   return (
-    <div>
+    <div className="character">
       <button className={isActive ? 'character-button active' : 'character-button'} onClick={handleClick}>
-        <Image src={`/assets/img/characters/${CharacterProps.name}.svg`} alt={CharacterProps.name} width={69} height={69}/>
+        <Image
+          src={`/assets/img/characters/${CharacterProps.name}.svg`}
+          alt={CharacterProps.name}
+          width={69}
+          height={69}
+        />
         <p>{CharacterProps.name}</p>
       </button>
       {isActive && (
         <div className="popup character-popup">
-          <h2>{CharacterProps.name}</h2>
+          <h3>{CharacterProps.name}</h3>
           <p>{CharacterProps.description}</p>
+          <ul className="skills">
+            {Object.entries(SkillsJson)?.map(([key, skill], index) =>
+                <Skill key={index} skill={skill.name} value={skill.value}/>
+            )}
+          </ul>
           <button onClick={handleConfirm}>Je choisis {CharacterProps.name} !</button>
         </div>
       )}

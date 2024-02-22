@@ -1,33 +1,39 @@
-"use client"
+'use client';
 
-import {Dispatch, ReactElement, SetStateAction, useState} from 'react';
+import { Dispatch, ReactElement, SetStateAction, useState } from 'react';
 import { CharacterProps } from '@/services/interfaces/Character';
 import charactersData from '@/services/api/characters.json';
 import CharacterButton from '@/components/Buttons/CharacterButton';
-import {GameInstance} from "@/classes/GameInstance";
+import { GameInstance } from '@/classes/GameInstance';
 
-const CharacterPage = ({gameInstance, setStage}: {gameInstance: GameInstance, setStage: Dispatch<SetStateAction<string>>}): ReactElement => {
+const CharacterPage = ({
+  gameInstance,
+  setStage,
+}: {
+  gameInstance: GameInstance;
+  setStage: Dispatch<SetStateAction<string>>;
+}): ReactElement => {
   const [selectedCharacter, setSelectedCharacter] = useState<CharacterProps | null>(null);
   const [activeButton, setActiveButton] = useState<number | null>(null);
 
   const handleSelect = (CharacterProps: CharacterProps) => {
-      setSelectedCharacter(CharacterProps);
+    setSelectedCharacter(CharacterProps);
   };
 
   const handleClick = (id: number, alreadyActive: boolean) => {
-    if(alreadyActive){
-      setActiveButton(id)
+    if (alreadyActive) {
+      setActiveButton(id);
     } else {
-      setActiveButton(null)
+      setActiveButton(null);
     }
   };
 
   return (
-    <div id='character_choice'>
+    <div id="character_choice">
       <h2>Choisis ton personnage :</h2>
-      <div className='flex'>
+      <div className="flex">
         {charactersData.map((CharacterProps: CharacterProps) => (
-          <CharacterButton 
+          <CharacterButton
             key={CharacterProps.id}
             CharacterProps={CharacterProps}
             gameInstance={gameInstance}
@@ -38,12 +44,12 @@ const CharacterPage = ({gameInstance, setStage}: {gameInstance: GameInstance, se
           />
         ))}
       </div>
-      <div>
+      <div className='instructions'>
         <p>Clique sur un personnage pour voir ses statistiques </p>
       </div>
       {selectedCharacter && (
         <div className='selected-character'>
-          <h2>{selectedCharacter.name}</h2>
+          <h3>{selectedCharacter.name}</h3>
         </div>
       )}
     </div>
