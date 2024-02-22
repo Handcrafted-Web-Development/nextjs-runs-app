@@ -5,7 +5,16 @@ export interface CardProps {
     choices: ChoiceProps[];
 }
 
-interface ChoiceProps {
+export interface ChoiceProps {
     value: string;
     place?: 'left' | 'right';
+    effects: EffectProps[];
 }
+
+interface EffectProps {
+    social: number;
+    motivation: number;
+    fitness : number;
+    money: number;
+}
+
