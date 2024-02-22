@@ -2,6 +2,7 @@ export interface CardProps {
   label: string;
   name: string;
   description: string;
+  img?: string;
   choices: ChoiceProps[];
 }
 

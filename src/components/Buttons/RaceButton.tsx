@@ -6,13 +6,12 @@ import Image from 'next/image';
  * @file RaceButton.tsx
  **/
 export default function RaceButton({ race, isActive, onClick }: RaceButtonProps): ReactElement {
-
   const handleClick = () => {
-      onClick(race)
+    onClick(race);
   };
 
   return (
-    <button className={isActive ? 'race-button active' : 'race-button'} onClick={handleClick}> 
+    <button className={isActive ? 'race-button active' : 'race-button'} onClick={handleClick}>
       <div>
         <Image src={race.pathname} alt={race.name} width={69} height={69} />
       </div>
