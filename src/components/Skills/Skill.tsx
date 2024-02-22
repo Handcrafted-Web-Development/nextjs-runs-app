@@ -3,16 +3,19 @@ import { SkillProps } from '@/services/interfaces/Skill';
 
 import '@/styles/skills.scss';
 
-const Skill = ({ skill, value }: SkillProps): ReactElement => {
+const Skill = ({ name, value }: SkillProps): ReactElement => {
+  console.log(name);
+  console.log(value);
+
   return (
-    <div className={`skill ${skill}`}>
-      <div className='skill_content'>
+    <div className={`skill ${name}`}>
+      <div className="skill_content">
         <svg className="icon">
-          <use href={`/assets/img/icons.svg#${skill}`} />
+          <use href={`/assets/img/icons.svg#${name}`} />
         </svg>
-        <span>{skill}</span>
+        <span>{name}</span>
       </div>
-      <span style={{ height: `${value}px` }}  className='progress'></span>
+      <span style={{ height: `${value}px` }} className={value == 100 ? `progress progress-100` : `progress`}></span>
     </div>
   );
 };

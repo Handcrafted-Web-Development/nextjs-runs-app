@@ -3,10 +3,9 @@ import '@/styles/character.scss';
 
 import { Dispatch, ReactElement, SetStateAction, useState } from 'react';
 import { CharacterProps } from '@/services/interfaces/Character';
-import Image from "next/image";
-import {GameInstance} from "@/classes/GameInstance";
-import Skill from "@/components/Skills/Skill";
-import SkillsJson from "@/services/api/skills.json"
+import Image from 'next/image';
+import { GameInstance } from '@/classes/GameInstance';
+import Skill from '@/components/Skills/Skill';
 
 interface CharacterButtonProps {
   CharacterProps: CharacterProps;
@@ -57,9 +56,18 @@ const CharacterButton = ({
           <h3>{CharacterProps.name}</h3>
           <p>{CharacterProps.description}</p>
           <ul className="skills">
-            {Object.entries(SkillsJson)?.map(([key, skill], index) =>
-                <Skill key={index} skill={skill.name} value={skill.value}/>
-            )}
+            <li>
+              <Skill name="Social" value={CharacterProps.social_stat} />
+            </li>
+            <li>
+              <Skill name="Argent" value={CharacterProps.money_stat} />
+            </li>
+            <li>
+              <Skill name="Mental" value={CharacterProps.motivation_stat} />
+            </li>
+            <li>
+              <Skill name="Santé" value={CharacterProps.fitness_stat} />
+            </li>
           </ul>
           <button onClick={handleConfirm}>Je choisis {CharacterProps.name} !</button>
         </div>
