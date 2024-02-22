@@ -4,6 +4,9 @@ import { SkillProps } from '@/services/interfaces/Skill';
 import '@/styles/skills.scss';
 
 const Skill = ({ name, value }: SkillProps): ReactElement => {
+  console.log(name)
+  console.log(value)
+
   return (
     <div className={`skill ${name}`}>
       <div className='skill_content'>
@@ -12,7 +15,10 @@ const Skill = ({ name, value }: SkillProps): ReactElement => {
         </svg>
         <span>{name}</span>
       </div>
-      <span style={{ height: `${value}px` }}  className='progress'></span>
+      <span 
+        style={{ height: `${value}px` }}  
+        className={(value == 100 ? `progress progress-100` : `progress` )}
+      ></span>
     </div>
   );
 };

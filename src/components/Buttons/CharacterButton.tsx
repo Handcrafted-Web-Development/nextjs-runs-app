@@ -40,8 +40,6 @@ const CharacterButton = ({
     }
   };
 
-  console.log(CharacterProps)
-
   return (
     <div className="character">
       <button className={isActive ? 'character-button active' : 'character-button'} onClick={handleClick}>
