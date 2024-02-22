@@ -4,9 +4,6 @@ import { SkillProps } from '@/services/interfaces/Skill';
 import '@/styles/skills.scss';
 
 const Skill = ({ name, value }: SkillProps): ReactElement => {
-  console.log(name);
-  console.log(value);
-
   return (
     <div className={`skill ${name}`}>
       <div className="skill_content">

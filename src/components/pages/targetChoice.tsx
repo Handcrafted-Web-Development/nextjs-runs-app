@@ -19,13 +19,12 @@ export default function TargetChoice({
   const [activeButton, setActiveButton] = useState<number | null>(null);
 
   const handleClick = (race: RaceProps) => {
-      setActiveButton(race.id);
-      setRace(race);
-      setIsSelected(true);
+    setActiveButton(race.id);
+    setRace(race);
+    setIsSelected(true);
   };
 
   const handleSubmit = (race: RaceProps, setStage: Dispatch<SetStateAction<string>>) => {
-    console.log(race)
     gameInstance.getTarget(race, setStage);
   };
 
