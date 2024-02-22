@@ -41,8 +41,8 @@ $color3: #643efd;
       }
     }
     &.currentStep {
-      width: 20px;
-      height: 20px;
+      width: 16px;
+      height: 16px;
       background-color: $color3;
       &::before {
         background-color: $color2;

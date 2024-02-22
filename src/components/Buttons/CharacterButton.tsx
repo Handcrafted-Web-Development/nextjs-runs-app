@@ -6,6 +6,7 @@ import { CharacterProps } from '@/services/interfaces/Character';
 import Image from 'next/image';
 import { GameInstance } from '@/classes/GameInstance';
 import Skill from '@/components/Skills/Skill';
+import SkillsJson from '@/services/api/skills.json';
 
 interface CharacterButtonProps {
   CharacterProps: CharacterProps;

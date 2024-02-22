@@ -60,11 +60,11 @@
     "name": "Luis",
     "description": "Je te propose une séance intensive demain matin à 6 heures, ça coûte 50€ t'es partant ?",
     "img": "../../public/assets/img/cards/gym.png",
-    "choicess": [
+    "choices": [
       {
         "value": "Non, je préfère dormir et économiser",
         "place": "left",
-        "effect": {
+        "effects": {
           "social": -10,
           "motivation": -10,
           "fitness": -30,
@@ -88,7 +88,7 @@
     "name": "Karla",
     "description": "Ca te dit un petit burger ce midi ?",
     "img": "../../public/assets/img/cards/restaurant.png",
-    "choicess": [
+    "choices": [
       {
         "value": "Non, je vais me faire à manger chez moi",
         "place": "left",
@@ -116,7 +116,7 @@
     "name": "Mme Boss",
     "description": "On a besoin de toi ce soir pour un dossier, tes heures sup seront payées bien sûr.",
     "img": "../../public/assets/img/cards/work.png",
-    "choicess": [
+    "choices": [
       {
         "value": "Pas possible, j'ai prévu d'aller courir ce soir",
         "place": "left",

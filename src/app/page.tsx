@@ -8,7 +8,7 @@ import CharacterChoice from '@/components/pages/characterPage';
 import GameLayout from '@/components/Layouts/GameLayout';
 import { GameInstance } from '@/classes/GameInstance';
 import { useEffect, useState } from 'react';
-import { CardProps } from '@/services/interfaces/Card';
+import { Card } from '@/classes/Card';
 
 export default function Home() {
   const gameInstance = new GameInstance();
@@ -33,7 +33,7 @@ export default function Home() {
       setContent(<CharacterChoice gameInstance={gameInstance} setStage={setStage} />);
     }
     if (stage === 'game') {
-      setContent(<GameLayout choicesJson={choicesJson as CardProps[]} />);
+      setContent(<GameLayout choicesJson={choicesJson as Card[]} />);
     }
   };
 

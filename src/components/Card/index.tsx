@@ -1,8 +1,8 @@
 import '@/styles/card.scss';
 import { ReactElement } from 'react';
 import Button from '@/components/Buttons/Button';
-import { CardProps } from '@/services/interfaces/Card';
-const Index = ({ label, name, description, choices }: CardProps): ReactElement => {
+import { Card } from '@/classes/Card';
+const Index = ({ onClick, label, name, description, choices }: Card): ReactElement => {
   return (
     <div className="card">
       <span className="card__label">{label}</span>
@@ -13,7 +13,13 @@ const Index = ({ label, name, description, choices }: CardProps): ReactElement =
         </div>
         <div className="card__buttons">
           {choices?.map((choice, index) => (
-            <Button key={index} value={choice.value} choicesLenght={choices.length} choicePlace={choice.place} />
+            <Button
+              key={index}
+              onClick={() => onClick(choice)}
+              value={choice.value}
+              choicesLenght={choices.length}
+              choicePlace={choice.place}
+            />
           ))}
         </div>
       </div>

@@ -1,17 +1,19 @@
-import { CardProps, ChoiceProps } from '@/services/interfaces/Card';
+import { ChoiceProps } from '@/services/interfaces/Card';
 
-class Card {
-  label: string;
-  name: string;
-  description: string;
-  img?: string;
-  choices: ChoiceProps[];
+export class Card {
+  label;
+  name;
+  description;
+  img;
+  choices;
 
-  constructor(cardDatas: CardProps) {
-    this.label = cardDatas.label;
-    this.name = cardDatas.name;
-    this.description = cardDatas.description;
-    this.img = cardDatas.img;
-    this.choices = cardDatas.choices;
+  constructor(label: string, name: string, description: string, choices: ChoiceProps[], img?: string) {
+    this.label = label;
+    this.name = name;
+    this.description = description;
+    this.img = img;
+    this.choices = choices;
   }
+
+  onClick(choice: ChoiceProps) {}
 }

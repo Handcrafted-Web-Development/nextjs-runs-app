@@ -5,14 +5,16 @@ import '@/styles/skills.scss';
 
 const Skill = ({ name, value }: SkillProps): ReactElement => {
   return (
-    <div className={`skill ${name}`}>
-      <div className="skill_content">
-        <svg className="icon">
-          <use href={`/assets/img/icons.svg#${name}`} />
-        </svg>
-        <span>{name}</span>
-      </div>
-      <span style={{ height: `${value}px` }} className={value == 100 ? `progress progress-100` : `progress`}></span>
+    <div
+      className={`skill ${name}`}
+      style={{
+        backgroundImage: `linear-gradient(to top, rgba(0,0,0,.1) 0%, rgba(0,0,0,.1) ${value}%, transparent ${value}%, transparent 100%`,
+      }}
+    >
+      <svg className="icon">
+        <use href={`/assets/img/icons.svg#${name}`} />
+      </svg>
+      <span>{name}</span>
     </div>
   );
 };
