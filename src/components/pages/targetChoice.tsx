@@ -19,38 +19,36 @@ export default function TargetChoice({
   const [activeButton, setActiveButton] = useState<number | null>(null);
 
   const handleClick = (race: RaceProps) => {
-      setActiveButton(race.id);
-      setRace(race);
-      setIsSelected(true);
+    setActiveButton(race.id);
+    setRace(race);
+    setIsSelected(true);
   };
 
   const handleSubmit = (race: RaceProps, setStage: Dispatch<SetStateAction<string>>) => {
-    console.log(race)
+    console.log(race);
     gameInstance.getTarget(race, setStage);
   };
 
   return (
     <div id="target_choice">
       <h2>Quel est ton objectif ?</h2>
-      <div className='flex'>
+      <div className="flex">
         {racesData.map((race: RaceProps) => {
           return (
-            <RaceButton 
-              key={race.id} 
-              race={race} 
+            <RaceButton
+              key={race.id}
+              race={race}
               isActive={activeButton === race.id}
               onClick={(race: RaceProps) => handleClick(race)}
             />
           );
         })}
       </div>
-      {isSelected ? 
-        <button 
-          className="submit" 
-          onClick={() => handleSubmit(race as RaceProps, setStage)}
-        >
+      {isSelected ? (
+        <button className="submit" onClick={() => handleSubmit(race as RaceProps, setStage)}>
           Gooo !
-        </button> : null}
+        </button>
+      ) : null}
     </div>
   );
 }
