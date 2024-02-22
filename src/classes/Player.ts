@@ -1,4 +1,4 @@
-class Player {
+export class Player {
   social: number;
   motivation: number;
   fitness: number;
