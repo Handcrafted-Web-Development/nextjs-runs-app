@@ -25,7 +25,6 @@ export default function TargetChoice({
   };
 
   const handleSubmit = (race: RaceProps, setStage: Dispatch<SetStateAction<string>>) => {
-    console.log(race);
     gameInstance.getTarget(race, setStage);
   };
 
