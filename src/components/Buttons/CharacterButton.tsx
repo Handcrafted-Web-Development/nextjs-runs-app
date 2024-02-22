@@ -6,21 +6,21 @@ import React, { useState } from 'react';
 import { CharacterProps } from '@/services/interfaces/Character';
 import Image from "next/image";
 
-interface CharacterProps {
-  character: Character;
-  onSelect: (character: Character, index: number) => void;
+interface CharacterButton {
+  CharacterProps: CharacterProps;
+  onSelect: (character: CharacterProps, index: number) => void;
   isActive: boolean;
   onClick: () => void;
 }
 
-const CharacterButton: React.FC<CharacterProps> = ({ character: CharacterProps, onSelect : (character: CharacterProps) => void, isActive, onClick }) => {
+const CharacterButton: React.FC<CharacterButton> = ({ CharacterProps, onSelect, isActive, onClick }) => {
   const handleConfirm = () => {
-    onSelect(character, -1);
+    onSelect(CharacterProps, -1);
 };
 
   const handleClick = () => {
     if (isActive) {
-      onSelect(character, -1);
+      onSelect(CharacterProps, -1);
     } else {
       onClick();
     }
@@ -29,14 +29,14 @@ const CharacterButton: React.FC<CharacterProps> = ({ character: CharacterProps, 
   return (
     <div>
       <button className={isActive ? 'character-button active' : 'character-button'} onClick={handleClick}>
-        <Image src={`/assets/img/characters/${character.prenom}.svg`} alt={character.prenom} width={69} height={69}/>
-        <p>{character.prenom}</p>
+        <Image src={`/assets/img/characters/${CharacterProps.prenom}.svg`} alt={CharacterProps.prenom} width={69} height={69}/>
+        <p>{CharacterProps.prenom}</p>
       </button>
       {isActive && (
         <div className="popup character-popup">
-          <h2>{character.prenom}</h2>
-          <p>{character.description}</p>
-          <button onClick={handleConfirm}>Je choisis {character.prenom} !</button>
+          <h2>{CharacterProps.prenom}</h2>
+          <p>{CharacterProps.description}</p>
+          <button onClick={handleConfirm}>Je choisis {CharacterProps.prenom} !</button>
         </div>
       )}
     </div>
