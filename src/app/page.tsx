@@ -16,13 +16,7 @@ export default function Home() {
 
     const [content, setContent] = useState(<div>Chargement...</div>)
 
-    const [stage, setStage] = useState(() => {
-        if (typeof window !== 'undefined') {
-            return localStorage.getItem('stage') ?? '';
-        } else {
-            return '';
-        }
-    })
+    const [stage, setStage] = useState(() => typeof window !== 'undefined' ? (localStorage.getItem('stage') ?? '') : (''))
 
     useEffect(() => {
         getContent()
