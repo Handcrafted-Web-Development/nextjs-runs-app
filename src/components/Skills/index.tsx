@@ -5,7 +5,7 @@ import '@/styles/skills.scss';
 
 const Index = () => {
   return (
-    <div className='skills'>
+    <div className="skills">
       {Object.entries(SkillsJson)?.map(([key, skill], index) => (
         <Skill key={index} name={skill.name} value={skill.value} />
       ))}

@@ -1,53 +1,52 @@
-$color1: #E0DFFF;
-$color2: #B3A0FF;
-$color3: #643EFD;
+$color1: #e0dfff;
+$color2: #b3a0ff;
+$color3: #643efd;
 
 .timeline {
-    display: flex;
-    margin: 10px auto;
-    justify-content: center;
-    align-items: center;
-    .step {
-        width: 12px;
-        height: 12px;
+  display: flex;
+  margin: 10px auto;
+  justify-content: center;
+  align-items: center;
+  .step {
+    width: 12px;
+    height: 12px;
+    background-color: $color1;
+    border-radius: 50%;
+    &:not(:first-child) {
+      margin-left: 10px;
+      position: relative;
+      &::before {
+        position: absolute;
+        content: '';
+        width: 10px;
+        height: 4px;
         background-color: $color1;
-        border-radius: 50%;
-        &:not(:first-child) {
-            margin-left: 10px;
-            position: relative;
-            &::before {
-                position: absolute;
-                content: "";
-                width: 10px;
-                height: 4px;
-                background-color: $color1;
-                left: -10px;
-                display: block;
-                top: calc(50% - 2px);
-            }
-        }
-        &:last-child {
-            width: 20px;
-            height: 20px;
-            background-image: url(../../public/assets/img/flag.svg);
-            background-size: 12px;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        &.previousStep {
-            background-color: $color2;
-            &::before {
-                background-color: $color2;
-            }
-        }
-        &.currentStep {
-            width: 20px;
-            height: 20px;
-            background-color: $color3;
-            &::before {
-                background-color: $color2;
-            }
-        }
+        left: -10px;
+        display: block;
+        top: calc(50% - 2px);
+      }
     }
-    
+    &:last-child {
+      width: 20px;
+      height: 20px;
+      background-image: url(../../public/assets/img/flag.svg);
+      background-size: 12px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    &.previousStep {
+      background-color: $color2;
+      &::before {
+        background-color: $color2;
+      }
+    }
+    &.currentStep {
+      width: 20px;
+      height: 20px;
+      background-color: $color3;
+      &::before {
+        background-color: $color2;
+      }
+    }
+  }
 }
