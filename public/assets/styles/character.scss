@@ -1,0 +1,54 @@
+
+#character_choice {
+
+    .flex {
+        justify-content: center;
+        gap: 10vw;
+        flex-wrap: wrap;
+
+        button {
+            background-color: inherit;
+            border: none;
+            border-radius: 30px;
+            padding: 10px;
+            box-shadow: none;
+
+            &.active {
+                background-color: #eee;
+                border: 1px solid red;
+            }
+
+            img {
+                height: 30vw;
+                width: auto;
+            }
+
+            p {
+                color: #000;
+            }
+        }
+        .popup {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 18px;
+            align-items: center;
+            height: 300px;
+            text-align: center;
+            background-color: #fff;
+            color: #000;
+            z-index: 999;
+
+            button {
+                width: fit-content;
+                padding: 15px 30px;
+                color: #000;
+                border: 1px solid;
+            }
+            
+        }
+    }
+}

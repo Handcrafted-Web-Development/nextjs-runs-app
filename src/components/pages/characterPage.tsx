@@ -8,27 +8,30 @@ import {GameInstance} from "@/classes/GameInstance";
 
 const CharacterPage = ({gameInstance, setStage}: {gameInstance: GameInstance, setStage: Dispatch<SetStateAction<string>>}): ReactElement => {
   const [selectedCharacter, setSelectedCharacter] = useState<CharacterProps | null>(null);
+  const [activeButton, setActiveButton] = useState<number | null>(null);
 
-  const handleSelect = (character: CharacterProps) => {
+  const handleSelect = (character: CharacterProps, index: number) => {
     setSelectedCharacter(character);
   };
 
   return (
-    <div>
+    <div id='character_choice'>
       <h1>Choisissez votre personnage :</h1>
-      <div>
-        {charactersData.map((character: CharacterProps) => (
+      <div className='flex'>
+        {charactersData.map((CharacterProps: CharacterProps, index: number) => (
           <CharacterButton 
-            key={character.id} 
-            character={character} 
-            onSelect={handleSelect}
+            key={CharacterProps.id}
+            CharacterProps={CharacterProps}
+            onSelect={(character: CharacterProps) => handleSelect(character, index)}
+            isActive={activeButton === index}
+            onClick={() => setActiveButton(index)}
             gameInstance={gameInstance}
             setStage={setStage}
           />
         ))}
       </div>
       {selectedCharacter && (
-        <div>
+        <div className='selected-character'>
           <h2>{selectedCharacter.name}</h2>
         </div>
       )}

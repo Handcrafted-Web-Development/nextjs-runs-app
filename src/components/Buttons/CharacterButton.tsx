@@ -1,18 +1,31 @@
+
+import '../../../public/assets/styles/main.css'
+import '../../../public/assets/styles/character.css'
+
 import {Dispatch, ReactElement, SetStateAction, useState} from 'react';
 import { CharacterProps } from '@/services/interfaces/Character';
 import Image from "next/image";
 import {GameInstance} from "@/classes/GameInstance";
-const CharacterButton = ({ character, onSelect, gameInstance, setStage }: {character: CharacterProps, onSelect: (character: CharacterProps) => void, gameInstance: GameInstance, setStage: Dispatch<SetStateAction<string>>}): ReactElement => {
-  const [showPopup, setShowPopup] = useState<boolean>(false);
 
+interface CharacterButtonProps {
+  CharacterProps: CharacterProps;
+  onSelect: (character: CharacterProps) => void;
+  isActive: boolean;
+  onClick: () => void;
+  gameInstance: GameInstance;
+  setStage: Dispatch<SetStateAction<string>>;
+}
+
+const CharacterButton = ({ CharacterProps, onSelect, isActive, onClick, gameInstance, setStage }: CharacterButtonProps): ReactElement => {
+  const [showPopup, setShowPopup] = useState<boolean>(false);
   const handleClick = () => {
     setShowPopup(true);
   };
 
   const handleConfirm = () => {
-    onSelect(character);
+    onSelect(CharacterProps);
     setShowPopup(false);
-    gameInstance.getCharacter(character, setStage)
+    gameInstance.getCharacter(CharacterProps, setStage)
   };
 
   const handleCancel = () => {
@@ -21,20 +34,15 @@ const CharacterButton = ({ character, onSelect, gameInstance, setStage }: {chara
 
   return (
     <div>
-      <button onClick={handleClick}>
-        <Image src={`/assets/img/characters/${character.name}.svg`} alt={character.name} width={69} height={69}/>
-        <p>{character.name}</p>
+      <button className={isActive ? 'character-button active' : 'character-button'} onClick={handleClick}>
+        <Image src={`/assets/img/characters/${CharacterProps.name}.svg`} alt={CharacterProps.name} width={69} height={69}/>
+        <p>{CharacterProps.name}</p>
       </button>
-      {showPopup && (
-        <div className="popup">
-          <div className="popup-content">
-            <h2>{character.name}</h2>
-            <p>{character.description}</p>
-            <div>
-              <button onClick={handleConfirm}>Oui</button>
-              <button onClick={handleCancel}>Non</button>
-            </div>
-          </div>
+      {isActive && (
+        <div className="popup character-popup">
+          <h2>{CharacterProps.name}</h2>
+          <p>{CharacterProps.description}</p>
+          <button onClick={handleConfirm}>Je choisis {CharacterProps.name} !</button>
         </div>
       )}
     </div>
