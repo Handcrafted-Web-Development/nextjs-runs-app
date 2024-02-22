@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import '@/styles/timeline.scss'
+import '@/styles/timeline.scss';
 
 interface TimelineProps {
   currentStep: number;
