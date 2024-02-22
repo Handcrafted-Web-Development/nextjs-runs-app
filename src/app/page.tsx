@@ -1,5 +1,6 @@
 "use client"
 import events from "@/services/api/random-events.json"
+import choicesJson from "@/services/api/choices.json"
 
 import TargetChoice from '@/components/pages/targetChoice'
 import CharacterChoice from '@/components/pages/characterPage'
@@ -8,6 +9,7 @@ import Card from '@/components/Card/index'
 import {GameInstance} from "@/classes/GameInstance";
 import Timeline from "@/components/Timeline";
 import {useEffect, useState} from "react";
+import { ChoiceProps } from "@/services/interfaces/Card"
 
 
 export default function Home() {
@@ -39,9 +41,9 @@ export default function Home() {
                     <Skills/>
                     <Timeline currentStep={4} steps={14}/>
                     {
-                        events?.map((event, index) =>
-                            <Card key={index} label={event.label} name={event.name} description={event.description}
-                                  choices={event.choices}/>
+                        choicesJson?.map((item, index) =>
+                            <Card key={index} label={item.label} name={item.name} description={item.description}
+                                choices={item.choices}/>
                         )
                     }
                 </>
