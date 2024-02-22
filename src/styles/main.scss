@@ -1,15 +1,14 @@
-
 .flex {
-    display: flex;
+  display: flex;
 }
 
 .popup {
-    position: absolute;
+  position: absolute;
 }
 
 .selected-character {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 999;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 999;
 }
