@@ -1,11 +1,10 @@
+import '../../../public/assets/styles/main.css';
+import '../../../public/assets/styles/character.css';
 
-import '../../../public/assets/styles/main.css'
-import '../../../public/assets/styles/character.css'
-
-import {Dispatch, ReactElement, SetStateAction, useState} from 'react';
+import { Dispatch, ReactElement, SetStateAction, useState } from 'react';
 import { CharacterProps } from '@/services/interfaces/Character';
-import Image from "next/image";
-import {GameInstance} from "@/classes/GameInstance";
+import Image from 'next/image';
+import { GameInstance } from '@/classes/GameInstance';
 
 interface CharacterButtonProps {
   CharacterProps: CharacterProps;
@@ -16,13 +15,20 @@ interface CharacterButtonProps {
   setStage: Dispatch<SetStateAction<string>>;
 }
 
-const CharacterButton = ({ CharacterProps, onSelect, isActive, onClick, gameInstance, setStage }: CharacterButtonProps): ReactElement => {
+const CharacterButton = ({
+  CharacterProps,
+  onSelect,
+  isActive,
+  onClick,
+  gameInstance,
+  setStage,
+}: CharacterButtonProps): ReactElement => {
   const [showPopup, setShowPopup] = useState<boolean>(false);
 
   const handleConfirm = () => {
     onSelect(CharacterProps);
     setShowPopup(false);
-    gameInstance.getCharacter(CharacterProps, setStage)
+    gameInstance.getCharacter(CharacterProps, setStage);
   };
 
   const handleClick = () => {
@@ -36,7 +42,12 @@ const CharacterButton = ({ CharacterProps, onSelect, isActive, onClick, gameInst
   return (
     <div>
       <button className={isActive ? 'character-button active' : 'character-button'} onClick={handleClick}>
-        <Image src={`/assets/img/characters/${CharacterProps.name}.svg`} alt={CharacterProps.name} width={69} height={69}/>
+        <Image
+          src={`/assets/img/characters/${CharacterProps.name}.svg`}
+          alt={CharacterProps.name}
+          width={69}
+          height={69}
+        />
         <p>{CharacterProps.name}</p>
       </button>
       {isActive && (

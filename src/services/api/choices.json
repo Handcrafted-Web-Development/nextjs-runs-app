@@ -8,11 +8,11 @@
         "value": "Je peux pas j'ai piscine !",
         "place": "left",
         "effect": {
-            "social": -20,
-            "motivation": 20,
-            "fitness": 0,
-            "money": 10
-          }
+          "social": -20,
+          "motivation": 20,
+          "fitness": 0,
+          "money": 10
+        }
       },
       {
         "value": "C'est parti !",
@@ -35,11 +35,11 @@
         "value": "J'en ai déjà trop fait, à demain !",
         "place": "left",
         "effect": {
-            "social": 20,
-            "motivation": -20,
-            "fitness": -10,
-            "money": 0
-          }
+          "social": 20,
+          "motivation": -20,
+          "fitness": -10,
+          "money": 0
+        }
       },
       {
         "value": "Tu sais me parler mon frérot !",
@@ -49,7 +49,7 @@
           "motivation": -30,
           "fitness": -20,
           "money": 0
-          }
+        }
       }
     ]
   },
@@ -62,11 +62,11 @@
         "value": "Non, je préfère dormir et économiser",
         "place": "left",
         "effect": {
-            "social": -10,
-            "motivation": -10,
-            "fitness": -30,
-            "money": 30
-          }
+          "social": -10,
+          "motivation": -10,
+          "fitness": -30,
+          "money": 30
+        }
       },
       {
         "value": "Carrément !",
@@ -76,7 +76,7 @@
           "motivation": 20,
           "fitness": 20,
           "money": -30
-          }
+        }
       }
     ]
   }

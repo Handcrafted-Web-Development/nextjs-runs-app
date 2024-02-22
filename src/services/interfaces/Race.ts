@@ -1,7 +1,7 @@
-import {MouseEventHandler} from "react";
+import { MouseEventHandler } from 'react';
 
 export interface RaceProps {
-  id: number
+  id: number;
   name: string;
   pathname: string;
   level: string;
