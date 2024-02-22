@@ -2,7 +2,7 @@ import '@/styles/card.scss';
 import { ReactElement } from 'react';
 import Button from '@/components/Buttons/Button';
 import { Card } from '@/classes/Card';
-const Index = ({ buttonClick, label, name, description, choices }: Card): ReactElement => {
+const Index = ({ onClick, label, name, description, choices }: Card): ReactElement => {
   return (
     <div className="card">
       <span className="card__label">{label}</span>
@@ -15,7 +15,7 @@ const Index = ({ buttonClick, label, name, description, choices }: Card): ReactE
           {choices?.map((choice, index) => (
             <Button
               key={index}
-              onClick={() => buttonClick(choice)}
+              onClick={() => onClick(choice)}
               value={choice.value}
               choicesLenght={choices.length}
               choicePlace={choice.place}

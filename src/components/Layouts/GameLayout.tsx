@@ -23,17 +23,20 @@ const GameLayout = ({ choicesJson }: { choicesJson: Card[] }): ReactElement => {
     const updateStats = () => {
       localStorage.setItem(
         'social_stat',
-        String(parseInt(localStorage.getItem('social_stat')) + choice.effects.social),
+        String(parseInt(localStorage.getItem('social_stat') ?? '') + (choice?.effects?.social ?? 0)),
       );
       localStorage.setItem(
         'motivation_stat',
-        String(parseInt(localStorage.getItem('motivation_stat')) + choice.effects.motivation),
+        String(parseInt(localStorage.getItem('motivation_stat') ?? '') + (choice?.effects?.motivation ?? 0)),
       );
       localStorage.setItem(
         'fitness_stat',
-        String(parseInt(localStorage.getItem('fitness_stat')) + choice.effects.fitness),
+        String(parseInt(localStorage.getItem('fitness_stat') ?? '') + (choice?.effects?.fitness ?? 0)),
       );
-      localStorage.setItem('money_stat', String(parseInt(localStorage.getItem('money_stat')) + choice.effects.money));
+      localStorage.setItem(
+        'money_stat',
+        String(parseInt(localStorage.getItem('money_stat') ?? '') + (choice?.effects?.money ?? 0)),
+      );
     };
 
     updateStats();
@@ -50,11 +53,12 @@ const GameLayout = ({ choicesJson }: { choicesJson: Card[] }): ReactElement => {
   const cardComponents = cards?.map((card, index) => (
     <CardComponent
       key={index}
-      buttonClick={(choice) => handleButtonClick(choice)}
+      onClick={(choice) => handleButtonClick(choice)}
       label={card.label}
       name={card.name}
       description={card.description}
       choices={card.choices}
+      img={card.img}
     />
   ));
 

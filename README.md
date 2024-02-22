@@ -1,34 +1,91 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center"><a href="https://nextjs.org/" target="_blank"><img src="https://cdn.worldvectorlogo.com/logos/nextjs-2.svg" width="200" alt="Laravel Logo"></a></p>
 
-## Getting Started
+# NextJs and POO 💯 - Développement d'un jeu de rôle et de stratégie inspiré de 'Reigns' 👨🏼‍💻
 
-First, run the development server:
+_Lisez attentivement le Readme avant de commencer toute manipulation !_ ✌️
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Prérequis 👨🏼‍🏫
+
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en) (v20.11.1 ou supérieur)
+- [Npm](https://www.npmjs.com/) (v10.2.4 ou supérieur)
+- [Next.js](https://nextjs.org/docs)
+
+## Étapes d'Installation
+
+1. **Cloner le Projet**
+
+Ouvrez un terminal et exécutez la commande suivante pour cloner le projet depuis le dépôt Git :
+
+#### HTTPS
+
+```shell
+git clone https://github.com/Handcrafted-Web-Development/nextjs-runs-app.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### SSH
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```shell
+git clone git@github.com:Handcrafted-Web-Development/nextjs-runs-app.git
+```
 
-## Learn More
+2. **Installer les Dépendances**
 
-To learn more about Next.js, take a look at the following resources:
+Placez-vous dans le répertoire du projet et exécutez la commande suivante pour installer les dépendances avec npm :
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```shell
+cd nextjs-runs-app
+npm install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. **Explication des Dépendances**
 
-## Deploy on Vercel
+Ce projet utilise plusieurs devDependencies pour faciliter le développement et maintenir la cohérence du code lorsque l'on travaille en équipe. Voici une explication de chaque dépendance :
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- eslint : ESLint est un outil de linting très populaire pour JavaScript. Il permet de détecter et de signaler les erreurs de syntaxe, les mauvaises pratiques et les conventions de codage non respectées dans votre code JavaScript ou TypeScript.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- eslint-config-next : C'est la configuration ESLint spécifique à Next.js. Elle inclut les règles de linting recommandées pour les projets Next.js, garantissant ainsi la conformité aux meilleures pratiques de développement spécifiques à Next.js.
+
+- prettier : Prettier est un outil de formatage de code qui vous permet de définir des règles de formatage et de formater automatiquement votre code en fonction de ces règles. Cela aide à maintenir une base de code cohérente et facilement lisible.
+
+- sass : SASS est un préprocesseur CSS qui ajoute des fonctionnalités comme les variables, les mixins et les fonctions. Il simplifie l'écriture et la maintenance des feuilles de style en permettant l'utilisation de fonctionnalités avancées qui ne sont pas disponibles dans le CSS standard.
+
+4. **Activation des Dépendances**
+
+Pour activer ces outils, des scripts sont inclus dans le fichier package.json, les voici :
+
+```shell
+npm run dev
+```
+
+Lance le serveur de développement Next.js
+
+```shell
+npm run build
+```
+
+Build l'application Next.js pour l'environnement de production
+
+```shell
+npm run start
+```
+
+Démarre le serveur Next.js en mode production
+
+```shell
+npm run lint
+```
+
+Exécute ESLint pour le linting du code
+
+⚠️ **Attention : Il est recommandé de lancer cette commande avant de Push son code**
+
+```shell
+npm run format
+```
+
+Enfin cette commande éxécute Prettier pour formater automatiquement le code
+
+#### À noter que vous pouvez configurer vos IDE grâce au fichier .json des packages (exemple : .prettierrc) pour lancer la commande correspondante à chaque sauvegarde de votre code !
+
+Bon développement ! 🍀
