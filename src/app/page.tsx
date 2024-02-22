@@ -14,9 +14,15 @@ export default function Home() {
 
     const gameInstance = new GameInstance();
 
-    const [content, setContent] = useState(<div>Erreur</div>)
+    const [content, setContent] = useState(<div>Chargement...</div>)
 
-    const [stage, setStage] = useState(localStorage.getItem('stage') ?? '')
+    const [stage, setStage] = useState(() => {
+        if (typeof window !== 'undefined') {
+            return localStorage.getItem('stage') ?? '';
+        } else {
+            return '';
+        }
+    })
 
     useEffect(() => {
         getContent()
