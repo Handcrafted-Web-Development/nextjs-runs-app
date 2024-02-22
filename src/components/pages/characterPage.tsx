@@ -38,12 +38,12 @@ const CharacterPage = ({gameInstance, setStage}: {gameInstance: GameInstance, se
           />
         ))}
       </div>
-      <div>
+      <div className='instructions'>
         <p>Clique sur un personnage pour voir ses statistiques </p>
       </div>
       {selectedCharacter && (
         <div className='selected-character'>
-          <h2>{selectedCharacter.name}</h2>
+          <h3>{selectedCharacter.name}</h3>
         </div>
       )}
     </div>
