@@ -1,4 +1,4 @@
 export interface SkillProps {
-  skill: string;
+  name: string;
   value: number;
 }
