@@ -35,4 +35,8 @@ export class GameInstance {
     console.log(localStorage.getItem('timeline'));
     return localStorage.getItem('timeline');
   };
+
+  public updateTimeline = () => {
+    localStorage.setItem('timeline', String(Number(localStorage.getItem('timeline')) + 1));
+  };
 }

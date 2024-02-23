@@ -49,6 +49,8 @@ const GameLayout = ({
 
     updateStats();
 
+    // Avance d'une étape dans la Timeline
+    gameInstance.updateTimeline();
     //On vient supprimer la carte sur laquelle on a cliqué
     setCards((prevCards) => {
       return prevCards?.slice(1) || [];
@@ -75,7 +77,7 @@ const GameLayout = ({
   return (
     <>
       <Skills />
-      <Timeline currentStep={currentStep} steps={14} />
+      <Timeline currentStep={currentStep} steps={15} />
       <div className="cards">{cardComponents}</div>
     </>
   );
