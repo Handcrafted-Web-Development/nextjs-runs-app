@@ -1,5 +1,4 @@
 .cards {
-  position: relative;
   perspective: 3000px;
 }
 
@@ -18,16 +17,17 @@
   padding: 16px;
   border-radius: 16px;
   box-shadow: 0 7px 29px 0 rgba(100, 100, 111, 0.2);
+  position: relative;
 
   &.swipe {
-    transition: transform .5s ease-in-out;
-
-    &-right {
-      transform: translate(75vw, -50px) rotate(15deg)
-    }
+    transition: transform 0.5s ease-in-out;
 
     &-left {
-      transform: translate(-75vw, -50px) rotate(15deg)
+      transform: translate(-75vw, -50px) rotate(-15deg);
+    }
+
+    &-right {
+      transform: translate(75vw, -50px) rotate(15deg);
     }
   }
 
@@ -68,15 +68,17 @@
     > * {
       width: 47%;
       cursor: pointer;
+      font-size: 12px;
     }
   }
 
   &:not(:first-child) {
-    position: absolute;
     z-index: -1;
-    transform: translate3d(-50%, -50%, -250px);
-    inset-block-start: 55%;
-    inset-inline-start: 50%;
-    margin-inline: auto;
+    transform: translate3d(0, -98%, -250px);
+
+    &.animate {
+      transition: transform 0.5s ease-in-out;
+      transform: translate3d(0, -100%, 0);
+    }
   }
 }
