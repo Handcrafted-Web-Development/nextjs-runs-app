@@ -1,18 +1,22 @@
 [
   {
     "name": "Social",
-    "trad": "social"
+    "trad": "social",
+    "color": "#FDFFA0"
   },
   {
     "name": "Argent",
-    "trad": "money"
+    "trad": "money",
+    "color": "#FFCEA0"
   },
   {
     "name": "Mental",
-    "trad": "motivation"
+    "trad": "motivation",
+    "color": "#A0E3FF"
   },
   {
     "name": "Santé",
-    "trad": "fitness"
+    "trad": "fitness",
+    "color": "#F7A0FF"
   }
 ]

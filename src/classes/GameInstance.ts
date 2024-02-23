@@ -2,13 +2,33 @@ import { Dispatch, SetStateAction } from 'react';
 import { RaceProps } from '@/services/interfaces/Race';
 import { CharacterProps } from '@/services/interfaces/Character';
 import { Player } from '@/classes/Player';
+import { ChoiceProps } from '@/services/interfaces/Card';
 
 export class GameInstance {
+  // private static instance: GameInstance;
   player: Player;
 
+  // /**
+  //  * The Singleton's constructor should always be private to prevent direct
+  //  * construction calls with the `new` operator.
+  //  */
   constructor() {
     this.player = new Player(0, 0, 0, 0);
   }
+
+  // /**
+  //  * The static method that controls the access to the singleton instance.
+  //  *
+  //  * This implementation let you subclass the Singleton class while keeping
+  //  * just one instance of each subclass around.
+  //  */
+  // public static getInstance(): GameInstance {
+  //   if (!GameInstance.instance) {
+  //     GameInstance.instance = new GameInstance();
+  //   }
+  //
+  //   return GameInstance.instance;
+  // }
 
   public getTarget = (choice: RaceProps, setStage: Dispatch<SetStateAction<string>>) => {
     localStorage.setItem('stage', 'character');
@@ -32,7 +52,6 @@ export class GameInstance {
   };
 
   public getTimeline = () => {
-    console.log(localStorage.getItem('timeline'));
     return localStorage.getItem('timeline');
   };
 
@@ -41,23 +60,49 @@ export class GameInstance {
       Number(localStorage.getItem('social_stat')) <= 0 ||
       Number(localStorage.getItem('motivation_stat')) <= 0 ||
       Number(localStorage.getItem('fitness_stat')) <= 0 ||
-      Number(localStorage.getItem('money_stat')) <= 0 ||
-      Number(localStorage.getItem('social_stat')) > 100 ||
-      Number(localStorage.getItem('motivation_stat')) > 100 ||
-      Number(localStorage.getItem('fitness_stat')) > 100 ||
-      Number(localStorage.getItem('money_stat')) > 100
+      Number(localStorage.getItem('money_stat')) <= 0
     ) {
-      alert('défaite');
+      return true;
     }
   };
 
   public detectVictory = () => {
-    if (Number(localStorage.getItem('timeline')) === 15) {
-      alert('victoire');
+    if (Number(localStorage.getItem('timeline')) === 14) {
+      return true;
     }
   };
 
   public updateTimeline = () => {
     localStorage.setItem('timeline', String(Number(localStorage.getItem('timeline')) + 1));
+  };
+
+  public updateStats = (choice: ChoiceProps) => {
+    //Récupérer les stats dans le localStorage
+    const getItem = (string: string) => {
+      return Number(localStorage.getItem(string) ?? '');
+    };
+
+    //Créer la nouvelle stat à partir de l'ancienne + le choix
+    const getNewStats = (string: string, param: number | undefined) => {
+      return getItem(string) + (param ?? 0);
+    };
+
+    //Envoyer la stat avec la logique de pas dépasser 100
+    const pushStats = (string: string, param: number | undefined) => {
+      if (getNewStats(string, param) >= 100) {
+        localStorage.setItem(string, String(100));
+      } else {
+        localStorage.setItem(string, String(getNewStats(string, param)));
+      }
+    };
+
+    pushStats('social_stat', choice?.effects?.social);
+    pushStats('motivation_stat', choice?.effects?.motivation);
+    pushStats('fitness_stat', choice?.effects?.fitness);
+    pushStats('money_stat', choice?.effects?.money);
+  };
+
+  public getPlayAgain = () => {
+    location.reload();
   };
 }

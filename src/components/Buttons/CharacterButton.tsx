@@ -1,21 +1,11 @@
 import '@/styles/main.scss';
 import '@/styles/character.scss';
 
-import { Dispatch, ReactElement, SetStateAction, useState } from 'react';
-import { CharacterProps } from '@/services/interfaces/Character';
+import { ReactElement, useState } from 'react';
 import Image from 'next/image';
-import { GameInstance } from '@/classes/GameInstance';
 import Skill from '@/components/Skills/Skill';
-import SkillsJson from '@/services/api/skills.json';
-
-interface CharacterButtonProps {
-  CharacterProps: CharacterProps;
-  onSelect: (character: CharacterProps) => void;
-  isActive: boolean;
-  onClick: (id: number, index: boolean) => void;
-  gameInstance: GameInstance;
-  setStage: Dispatch<SetStateAction<string>>;
-}
+import skills from '@/services/api/skills.json';
+import { CharacterButtonProps } from '@/services/interfaces/Character';
 
 const CharacterButton = ({
   CharacterProps,
@@ -58,16 +48,16 @@ const CharacterButton = ({
           <p>{CharacterProps.description}</p>
           <ul className="skills">
             <li>
-              <Skill name="Social" value={CharacterProps.social_stat} />
+              <Skill name={skills[0].name} value={CharacterProps.social_stat} color={skills[0].color} />
             </li>
             <li>
-              <Skill name="Argent" value={CharacterProps.money_stat} />
+              <Skill name={skills[1].name} value={CharacterProps.money_stat} color={skills[1].color} />
             </li>
             <li>
-              <Skill name="Mental" value={CharacterProps.motivation_stat} />
+              <Skill name={skills[2].name} value={CharacterProps.motivation_stat} color={skills[2].color} />
             </li>
             <li>
-              <Skill name="Santé" value={CharacterProps.fitness_stat} />
+              <Skill name={skills[3].name} value={CharacterProps.fitness_stat} color={skills[3].color} />
             </li>
           </ul>
           <button onClick={handleConfirm}>Je choisis {CharacterProps.name} !</button>

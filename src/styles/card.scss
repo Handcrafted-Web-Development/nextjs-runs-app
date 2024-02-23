@@ -1,10 +1,9 @@
 .cards {
-  position: relative;
   perspective: 3000px;
 }
 
 .card {
-  width: 400px;
+  max-width: 400px;
   margin-inline: auto;
   min-height: 512px;
   display: flex;
@@ -12,9 +11,25 @@
   align-items: flex-start;
   justify-content: space-between;
   background-color: #000;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   padding: 16px;
   border-radius: 16px;
   box-shadow: 0 7px 29px 0 rgba(100, 100, 111, 0.2);
+  position: relative;
+
+  &.swipe {
+    transition: transform 0.5s ease-in-out;
+
+    &-left {
+      transform: translate(-75vw, -50px) rotate(-15deg);
+    }
+
+    &-right {
+      transform: translate(75vw, -50px) rotate(15deg);
+    }
+  }
 
   &__label {
     padding: 8px 16px;
@@ -53,15 +68,17 @@
     > * {
       width: 47%;
       cursor: pointer;
+      font-size: 12px;
     }
   }
 
   &:not(:first-child) {
-    position: absolute;
     z-index: -1;
-    transform: translate3d(-50%, -50%, -250px);
-    inset-block-start: 55%;
-    inset-inline-start: 50%;
-    margin-inline: auto;
+    transform: translate3d(0, -98%, -250px);
+
+    &.animate {
+      transition: transform 0.5s ease-in-out;
+      transform: translate3d(0, -100%, 0);
+    }
   }
 }

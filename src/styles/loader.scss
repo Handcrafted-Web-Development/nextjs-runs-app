@@ -1,0 +1,10 @@
+.loader {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+
+  &__text {
+    text-align: center;
+  }
+}

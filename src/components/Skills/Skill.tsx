@@ -3,7 +3,7 @@ import { SkillProps } from '@/services/interfaces/Skill';
 
 import '@/styles/skills.scss';
 
-const Skill = ({ name, value }: SkillProps): ReactElement => {
+const Skill = ({ name, value, color }: SkillProps): ReactElement => {
   const [valueSkill, setValueSkill] = useState(0);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const Skill = ({ name, value }: SkillProps): ReactElement => {
     <div
       className={`skill ${name}`}
       style={{
-        backgroundImage: `linear-gradient(to top, rgba(0,0,0,.1) 0%, rgba(0,0,0,.1) ${valueSkill}%, transparent ${valueSkill}%, transparent 100%`,
+        backgroundImage: `linear-gradient(to top, ${color} 0%, ${color} ${valueSkill}%, transparent ${valueSkill}%, transparent 100%`,
       }}
     >
       <svg className="icon">
