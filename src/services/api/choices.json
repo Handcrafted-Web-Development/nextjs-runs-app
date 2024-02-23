@@ -3,7 +3,7 @@
     "label": "Camarade de classe",
     "name": "Gile",
     "description": "Je te propose une sortie techno au Warehouse ce vendredi soir ! Promis on va bien s’amuser mon grand.",
-    "img": "../../public/assets/img/cards/club.png",
+    "img": "club.png",
     "choices": [
       {
         "value": "Je peux pas j'ai piscine !",
@@ -12,7 +12,7 @@
           "social": -20,
           "motivation": 20,
           "fitness": 0,
-          "money": 10
+          "money": 20
         }
       },
       {
@@ -21,8 +21,8 @@
         "effects": {
           "social": 30,
           "motivation": -10,
-          "fitness": -10,
-          "money": -30
+          "fitness": -30,
+          "money": -20
         }
       }
     ]
@@ -31,15 +31,15 @@
     "label": "Ami",
     "name": "Pierrot",
     "description": "Il est 04 heures du matin, et Pierrot lâche sa phrase culte, `Vas-y, la der des bros`",
-    "img": "../../public/assets/img/cards/drink.png",
+    "img": "drink.png",
     "choices": [
       {
         "value": "J'en ai déjà trop fait, à demain !",
         "place": "left",
         "effects": {
-          "social": 20,
+          "social": -20,
           "motivation": -20,
-          "fitness": -10,
+          "fitness": 0,
           "money": 0
         }
       },
@@ -47,8 +47,8 @@
         "value": "Tu sais me parler mon frérot !",
         "place": "right",
         "effects": {
-          "social": 30,
-          "motivation": -30,
+          "social": -30,
+          "motivation": -10,
           "fitness": -20,
           "money": 0
         }
@@ -59,13 +59,13 @@
     "label": "Coach",
     "name": "Luis",
     "description": "Je te propose une séance intensive demain matin à 6 heures, ça coûte 50€ t'es partant ?",
-    "img": "../../public/assets/img/cards/gym.png",
+    "img": "gym.png",
     "choices": [
       {
         "value": "Non, je préfère dormir et économiser",
         "place": "left",
         "effects": {
-          "social": -10,
+          "social": -20,
           "motivation": -10,
           "fitness": -30,
           "money": 30
@@ -87,7 +87,7 @@
     "label": "Amie",
     "name": "Karla",
     "description": "Ca te dit un petit burger ce midi ?",
-    "img": "../../public/assets/img/cards/restaurant.png",
+    "img": "restaurant.png",
     "choices": [
       {
         "value": "Non, je vais me faire à manger chez moi",
@@ -115,7 +115,7 @@
     "label": "Patron",
     "name": "Mme Boss",
     "description": "On a besoin de toi ce soir pour un dossier, tes heures sup seront payées bien sûr.",
-    "img": "../../public/assets/img/cards/work.png",
+    "img": "work.png",
     "choices": [
       {
         "value": "Pas possible, j'ai prévu d'aller courir ce soir",
@@ -143,7 +143,7 @@
     "label": "Papa",
     "name": "Papa",
     "description": "Je vais faire un petit footing, tu viens avec moi ?",
-    "img": "../../public/assets/img/cards/dad.png",
+    "img": "dad.png",
     "choices": [
       {
         "value": "Non je préfère faire une course plus longue et intense",
@@ -171,7 +171,7 @@
     "label": "Voisine",
     "name": "Celine",
     "description": "Viens boire un verre à la maison ! Je te raconterais la fois où j'ai fini un marathon en 3h56 !",
-    "img": "../../public/assets/img/cards/neighbour.png",
+    "img": "neighbour.png",
     "choices": [
       {
         "value": "Je vais m'entraîner ce soir, je ne peux pas",
@@ -199,7 +199,7 @@
     "label": "Ami",
     "name": "Julien",
     "description": "J'ai trouvé une nouvelle paire de chaussures trop bien pour courir !",
-    "img": "../../public/assets/img/cards/shoes.png",
+    "img": "shoes.png",
     "choices": [
       {
         "value": "Je ne vais pas dépenser d'argent pour ça",
@@ -219,6 +219,34 @@
           "motivation": 10,
           "fitness": 10,
           "money": -20
+        }
+      }
+    ]
+  },
+  {
+    "label": "Collègue",
+    "name": "Charlot",
+    "description": "Il est 18h, petit drink afterwork ?",
+    "img": "drink.png",
+    "choices": [
+      {
+        "value": "Je reste encore au travail",
+        "place": "left",
+        "effects": {
+          "social": -20,
+          "motivation": -20,
+          "fitness": 0,
+          "money": 0
+        }
+      },
+      {
+        "value": "Carrément !",
+        "place": "right",
+        "effects": {
+          "social": -30,
+          "motivation": -10,
+          "fitness": -20,
+          "money": 0
         }
       }
     ]

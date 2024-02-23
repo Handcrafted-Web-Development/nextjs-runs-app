@@ -5,11 +5,30 @@ import { Player } from '@/classes/Player';
 import { ChoiceProps } from '@/services/interfaces/Card';
 
 export class GameInstance {
+  // private static instance: GameInstance;
   player: Player;
 
+  // /**
+  //  * The Singleton's constructor should always be private to prevent direct
+  //  * construction calls with the `new` operator.
+  //  */
   constructor() {
     this.player = new Player(0, 0, 0, 0);
   }
+
+  // /**
+  //  * The static method that controls the access to the singleton instance.
+  //  *
+  //  * This implementation let you subclass the Singleton class while keeping
+  //  * just one instance of each subclass around.
+  //  */
+  // public static getInstance(): GameInstance {
+  //   if (!GameInstance.instance) {
+  //     GameInstance.instance = new GameInstance();
+  //   }
+  //
+  //   return GameInstance.instance;
+  // }
 
   public getTarget = (choice: RaceProps, setStage: Dispatch<SetStateAction<string>>) => {
     localStorage.setItem('stage', 'character');
@@ -68,17 +87,13 @@ export class GameInstance {
       return getItem(string) + (param ?? 0);
     };
 
-    //Envoye de la nouvelle stat dans le localStorage
-    const setStats = (string: string, param: number | undefined) => {
-      localStorage.setItem(string, String(getNewStats(string, param)));
-    };
-
     //Envoyer la stat avec la logique de pas dépasser 100
     const pushStats = (string: string, param: number | undefined) => {
-      // -> faire des if else ici
-      setStats(string, param);
-      //la variable "param" va envoyer le nombre de la stat dans la bonne stat -> variable "string"
-      //pour envoyer 100 dans le localstorage -> setStats(string, 100);
+      if (getNewStats(string, param) >= 100) {
+        localStorage.setItem(string, String(100));
+      } else {
+        localStorage.setItem(string, String(getNewStats(string, param)));
+      }
     };
 
     pushStats('social_stat', choice?.effects?.social);
