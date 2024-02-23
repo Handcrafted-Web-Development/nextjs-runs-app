@@ -104,5 +104,6 @@ export class GameInstance {
 
   public getPlayAgain = () => {
     location.reload();
+    localStorage.clear();
   };
 }

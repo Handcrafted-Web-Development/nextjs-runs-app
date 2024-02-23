@@ -31,12 +31,10 @@ const GameLayout = ({
     //Detection victoire
     if (gameInstance.detectVictory()) {
       setIsWin('true');
-      localStorage.clear();
     }
     //Detection defaite
     if (gameInstance.detectDefeat()) {
       setIsWin('false');
-      localStorage.clear();
     }
   };
 
