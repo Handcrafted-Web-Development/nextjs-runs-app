@@ -5,11 +5,30 @@ import { Player } from '@/classes/Player';
 import { ChoiceProps } from '@/services/interfaces/Card';
 
 export class GameInstance {
+  // private static instance: GameInstance;
   player: Player;
 
+  // /**
+  //  * The Singleton's constructor should always be private to prevent direct
+  //  * construction calls with the `new` operator.
+  //  */
   constructor() {
     this.player = new Player(0, 0, 0, 0);
   }
+
+  // /**
+  //  * The static method that controls the access to the singleton instance.
+  //  *
+  //  * This implementation let you subclass the Singleton class while keeping
+  //  * just one instance of each subclass around.
+  //  */
+  // public static getInstance(): GameInstance {
+  //   if (!GameInstance.instance) {
+  //     GameInstance.instance = new GameInstance();
+  //   }
+  //
+  //   return GameInstance.instance;
+  // }
 
   public getTarget = (choice: RaceProps, setStage: Dispatch<SetStateAction<string>>) => {
     localStorage.setItem('stage', 'character');
