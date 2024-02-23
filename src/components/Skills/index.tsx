@@ -7,7 +7,12 @@ const Index = () => {
   return (
     <div className="skills">
       {Object.entries(SkillsJson)?.map(([key, skill], index) => (
-        <Skill key={index} name={skill.name} value={parseInt(localStorage.getItem(`${skill.trad}_stat`) ?? '')} />
+        <Skill
+          key={index}
+          name={skill.name}
+          value={parseInt(localStorage.getItem(`${skill.trad}_stat`) ?? '')}
+          color={skill.color}
+        />
       ))}
     </div>
   );
