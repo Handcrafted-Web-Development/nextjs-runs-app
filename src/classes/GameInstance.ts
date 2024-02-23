@@ -46,4 +46,8 @@ export class GameInstance {
       alert('défaite');
     }
   }
+
+  public updateTimeline = () => {
+    localStorage.setItem('timeline', String(Number(localStorage.getItem('timeline')) + 1));
+  };
 }
