@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.popup {
+  position: absolute;
+}
+
+.selected-character {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 999;
+}

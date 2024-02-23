@@ -1,18 +1,18 @@
 [
   {
     "name": "Social",
-    "value" : 10
+    "trad": "social"
   },
   {
     "name": "Argent",
-    "value" : 20
+    "trad": "money"
   },
   {
     "name": "Mental",
-    "value" : 30
+    "trad": "motivation"
   },
   {
     "name": "Santé",
-    "value" : 40
+    "trad": "fitness"
   }
 ]
