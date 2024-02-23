@@ -31,7 +31,7 @@
     "label": "Ami",
     "name": "Pierrot",
     "description": "Il est 04 heures du matin, et Pierrot lâche sa phrase culte, `Vas-y, la der des bros`",
-    "img": "drink.png",
+    "img": "game.png",
     "choices": [
       {
         "value": "J'en ai déjà trop fait, à demain !",
