@@ -103,7 +103,6 @@ export class GameInstance {
   };
 
   public getPlayAgain = () => {
-    localStorage.clear();
     location.reload();
   };
 }
