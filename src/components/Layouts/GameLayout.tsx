@@ -15,7 +15,7 @@ const GameLayout = ({
 }): ReactElement => {
   const [cards, setCards] = useState<Card[]>();
   const setCard = (item: Card) => {
-    const newCard = new Card(item.label, item.name, item.description, item.choices);
+    const newCard = new Card(item.label, item.name, item.description, item.choices, item.img);
     setCards((prevCards) => [...(prevCards || []), newCard]);
   };
 
@@ -54,8 +54,8 @@ const GameLayout = ({
       label={card.label}
       name={card.name}
       description={card.description}
-      choices={card.choices}
       img={card.img}
+      choices={card.choices}
     />
   ));
 
