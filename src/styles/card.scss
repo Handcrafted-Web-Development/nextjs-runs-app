@@ -19,6 +19,18 @@
   border-radius: 16px;
   box-shadow: 0 7px 29px 0 rgba(100, 100, 111, 0.2);
 
+  &.swipe {
+    transition: transform .5s ease-in-out;
+
+    &-right {
+      transform: translate(75vw, -50px) rotate(15deg)
+    }
+
+    &-left {
+      transform: translate(-75vw, -50px) rotate(15deg)
+    }
+  }
+
   &__label {
     padding: 8px 16px;
     background-color: #fff;
