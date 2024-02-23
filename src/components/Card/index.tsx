@@ -5,7 +5,7 @@ import { Card } from '@/classes/Card';
 
 const Index = ({ onClick, label, name, description, img, choices }: Card): ReactElement => {
   return (
-    <div className="card" style={{ backgroundImage: `url(/assets/img/cards/${img})` }}>
+    <div className="card" style={{ backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(/assets/img/cards/${img})` }}>
       <span className="card__label">{label}</span>
       <div className="card__contain">
         <div className="card__text">
