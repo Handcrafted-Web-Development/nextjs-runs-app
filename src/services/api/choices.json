@@ -12,7 +12,7 @@
           "social": -20,
           "motivation": 20,
           "fitness": 0,
-          "money": 10
+          "money": 20
         }
       },
       {
@@ -21,8 +21,8 @@
         "effects": {
           "social": 30,
           "motivation": -10,
-          "fitness": -10,
-          "money": -30
+          "fitness": -30,
+          "money": -20
         }
       }
     ]
@@ -37,9 +37,9 @@
         "value": "J'en ai déjà trop fait, à demain !",
         "place": "left",
         "effects": {
-          "social": 20,
+          "social": -20,
           "motivation": -20,
-          "fitness": -10,
+          "fitness": 0,
           "money": 0
         }
       },
@@ -47,8 +47,8 @@
         "value": "Tu sais me parler mon frérot !",
         "place": "right",
         "effects": {
-          "social": 30,
-          "motivation": -30,
+          "social": -30,
+          "motivation": -10,
           "fitness": -20,
           "money": 0
         }
@@ -65,7 +65,7 @@
         "value": "Non, je préfère dormir et économiser",
         "place": "left",
         "effects": {
-          "social": -10,
+          "social": -20,
           "motivation": -10,
           "fitness": -30,
           "money": 30
@@ -219,6 +219,34 @@
           "motivation": 10,
           "fitness": 10,
           "money": -20
+        }
+      }
+    ]
+  },
+  {
+    "label": "Collègue",
+    "name": "Charlot",
+    "description": "Il est 18h, petit drink afterwork ?",
+    "img": "drink.png",
+    "choices": [
+      {
+        "value": "Je reste encore au travail",
+        "place": "left",
+        "effects": {
+          "social": -20,
+          "motivation": -20,
+          "fitness": 0,
+          "money": 0
+        }
+      },
+      {
+        "value": "Carrément !",
+        "place": "right",
+        "effects": {
+          "social": -30,
+          "motivation": -10,
+          "fitness": -20,
+          "money": 0
         }
       }
     ]
