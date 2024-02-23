@@ -5,7 +5,6 @@ import CardComponent from '@/components/Card';
 import { Card } from '@/classes/Card';
 import { ChoiceProps } from '@/services/interfaces/Card';
 import { GameInstance } from '@/classes/GameInstance';
-import { log } from 'node:util';
 
 const GameLayout = ({
   choicesJson,
@@ -48,6 +47,9 @@ const GameLayout = ({
     };
 
     updateStats();
+
+    //Detection défaite
+    gameInstance.detectDefeat()
 
     //On vient supprimer la carte sur laquelle on a cliqué
     setCards((prevCards) => {

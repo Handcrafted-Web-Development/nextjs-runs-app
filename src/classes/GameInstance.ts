@@ -35,4 +35,15 @@ export class GameInstance {
     console.log(localStorage.getItem('timeline'));
     return localStorage.getItem('timeline');
   };
+
+  public detectDefeat = () => {
+    if (
+        Number(localStorage.getItem('social_stat')) <= 0 ||
+        Number(localStorage.getItem('motivation_stat')) <= 0 ||
+        Number(localStorage.getItem('fitness_stat')) <= 0 ||
+        Number(localStorage.getItem('money_stat')) <= 0
+    ) {
+      alert('défaite');
+    }
+  }
 }
