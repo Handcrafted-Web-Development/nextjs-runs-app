@@ -5,6 +5,7 @@ import CardComponent from '@/components/Card';
 import { Card } from '@/classes/Card';
 import { ChoiceProps } from '@/services/interfaces/Card';
 import { GameInstance } from '@/classes/GameInstance';
+import EndPopup from '@/components/EndPopup'
 
 const GameLayout = ({
   choicesJson,
@@ -24,16 +25,25 @@ const GameLayout = ({
     setCard(choicesJson[Math.floor(Math.random() * choicesJson.length)]);
   }, [choicesJson]);
 
+  const [isWin, setIsWin] = useState<string | null>(null)
+
+  const detectDefeatOrVictory = () => {
+    //Detection victoire
+    if(gameInstance.detectVictory()){
+      setIsWin("true")
+    }
+    //Detection defaite
+    if(gameInstance.detectDefeat()){
+      setIsWin("false")
+    }
+  }
+
   //Quand on click sur le bouton
   const handleButtonClick = (choice: ChoiceProps) => {
     //On met à jour les stats
     gameInstance.updateStats(choice);
 
-    //Detection défaite
-    gameInstance.detectDefeat();
-
-    //Detection victoire
-    gameInstance.detectVictory();
+    detectDefeatOrVictory()
 
     //Avance d'une étape dans la Timeline
     gameInstance.updateTimeline();
@@ -66,6 +76,9 @@ const GameLayout = ({
       <Skills />
       <Timeline currentStep={currentStep} steps={15} />
       <div className="cards">{cardComponents}</div>
+      {isWin && (
+        <EndPopup isWin={isWin}/>
+      )}
     </>
   );
 };

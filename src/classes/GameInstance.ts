@@ -62,13 +62,13 @@ export class GameInstance {
       Number(localStorage.getItem('fitness_stat')) <= 0 ||
       Number(localStorage.getItem('money_stat')) <= 0
     ) {
-      alert('défaite');
+      return true
     }
   };
 
   public detectVictory = () => {
     if (Number(localStorage.getItem('timeline')) === 14) {
-      alert('victoire');
+      return true
     }
   };
 
