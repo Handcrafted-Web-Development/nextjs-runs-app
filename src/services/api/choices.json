@@ -138,5 +138,89 @@
         }
       }
     ]
+  },
+  {
+    "label": "Papa",
+    "name": "Papa",
+    "description": "Je vais faire un petit footing, tu viens avec moi ?",
+    "img": "../../public/assets/img/cards/dad.png",
+    "choices": [
+      {
+        "value": "Non je préfère faire une course plus longue et intense",
+        "place": "left",
+        "effect": {
+          "social": -10,
+          "motivation": 20,
+          "fitness": 20,
+          "money": 0
+        }
+      },
+      {
+        "value": "Oui, bonne idée !",
+        "place": "right",
+        "effects": {
+          "social": 10,
+          "motivation": 10,
+          "fitness": 10,
+          "money": 0
+        }
+      }
+    ]
+  },
+  {
+    "label": "Voisine",
+    "name": "Celine",
+    "description": "Viens boire un verre à la maison ! Je te raconterais la fois où j'ai fini un marathon en 3h56 !",
+    "img": "../../public/assets/img/cards/neighbour.png",
+    "choices": [
+      {
+        "value": "Je vais m'entraîner ce soir, je ne peux pas",
+        "place": "left",
+        "effect": {
+          "social": -10,
+          "motivation": 10,
+          "fitness": 20,
+          "money": 0
+        }
+      },
+      {
+        "value": "Avec plaisir, j'ai hâte d'entendre ça !",
+        "place": "right",
+        "effects": {
+          "social": 20,
+          "motivation": 30,
+          "fitness": -10,
+          "money": 0
+        }
+      }
+    ]
+  },
+  {
+    "label": "Ami",
+    "name": "Julien",
+    "description": "J'ai trouvé une nouvelle paire de chaussures trop bien pour courir !",
+    "img": "../../public/assets/img/cards/shoes.png",
+    "choices": [
+      {
+        "value": "Je ne vais pas dépenser d'argent pour ça",
+        "place": "left",
+        "effect": {
+          "social": 0,
+          "motivation": -10,
+          "fitness": 0,
+          "money": 0
+        }
+      },
+      {
+        "value": "J'achète !",
+        "place": "right",
+        "effects": {
+          "social": 0,
+          "motivation": 10,
+          "fitness": 10,
+          "money": -20
+        }
+      }
+    ]
   }
 ]
