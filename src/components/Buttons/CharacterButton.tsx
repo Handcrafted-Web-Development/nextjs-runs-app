@@ -1,21 +1,10 @@
 import '@/styles/main.scss';
 import '@/styles/character.scss';
 
-import { Dispatch, ReactElement, SetStateAction, useState } from 'react';
-import { CharacterProps } from '@/services/interfaces/Character';
+import { ReactElement, useState } from 'react';
 import Image from 'next/image';
-import { GameInstance } from '@/classes/GameInstance';
 import Skill from '@/components/Skills/Skill';
-import SkillsJson from '@/services/api/skills.json';
-
-interface CharacterButtonProps {
-  CharacterProps: CharacterProps;
-  onSelect: (character: CharacterProps) => void;
-  isActive: boolean;
-  onClick: (id: number, index: boolean) => void;
-  gameInstance: GameInstance;
-  setStage: Dispatch<SetStateAction<string>>;
-}
+import { CharacterButtonProps } from '@/services/interfaces/Character';
 
 const CharacterButton = ({
   CharacterProps,
