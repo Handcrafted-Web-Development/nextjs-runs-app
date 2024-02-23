@@ -234,19 +234,19 @@
         "place": "left",
         "effects": {
           "social": -20,
-          "motivation": -20,
+          "motivation": 0,
           "fitness": 0,
-          "money": 0
+          "money": 20
         }
       },
       {
         "value": "Carrément !",
         "place": "right",
         "effects": {
-          "social": -30,
+          "social": 20,
           "motivation": -10,
           "fitness": -20,
-          "money": 0
+          "money": -10
         }
       }
     ]
