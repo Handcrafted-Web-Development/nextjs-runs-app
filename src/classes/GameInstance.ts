@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 import { RaceProps } from '@/services/interfaces/Race';
 import { CharacterProps } from '@/services/interfaces/Character';
 import { Player } from '@/classes/Player';
+import { ChoiceProps } from '@/services/interfaces/Card';
 
 export class GameInstance {
   player: Player;
@@ -32,11 +33,49 @@ export class GameInstance {
   };
 
   public getTimeline = () => {
-    console.log(localStorage.getItem('timeline'));
     return localStorage.getItem('timeline');
+  };
+
+  public detectDefeat = () => {
+    if (
+      Number(localStorage.getItem('social_stat')) <= 0 ||
+      Number(localStorage.getItem('motivation_stat')) <= 0 ||
+      Number(localStorage.getItem('fitness_stat')) <= 0 ||
+      Number(localStorage.getItem('money_stat')) <= 0
+    ) {
+      alert('défaite');
+    }
+  };
+
+  public detectVictory = () => {
+    if (Number(localStorage.getItem('timeline')) === 15) {
+      alert('victoire');
+    }
   };
 
   public updateTimeline = () => {
     localStorage.setItem('timeline', String(Number(localStorage.getItem('timeline')) + 1));
+  };
+
+  public updateStats = (choice: ChoiceProps) => {
+    const getItem = (string: string) => {
+      return Number(localStorage.getItem(string) ?? '');
+    };
+    const setStats = (string: string, param: number | undefined) => {
+      localStorage.setItem(string, String(getNewStats(string, param)));
+    };
+
+    const getNewStats = (string: string, param: number | undefined) => {
+      return getItem(string) + (param ?? 0);
+    };
+
+    const pushStats = (string: string, param: number | undefined) => {
+      setStats(string, param);
+    };
+
+    pushStats('social_stat', choice?.effects?.social);
+    pushStats('motivation_stat', choice?.effects?.motivation);
+    pushStats('fitness_stat', choice?.effects?.fitness);
+    pushStats('money_stat', choice?.effects?.money);
   };
 }

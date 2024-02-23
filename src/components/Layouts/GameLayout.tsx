@@ -5,7 +5,6 @@ import CardComponent from '@/components/Card';
 import { Card } from '@/classes/Card';
 import { ChoiceProps } from '@/services/interfaces/Card';
 import { GameInstance } from '@/classes/GameInstance';
-import { log } from 'node:util';
 
 const GameLayout = ({
   choicesJson,
@@ -28,29 +27,17 @@ const GameLayout = ({
   //Quand on click sur le bouton
   const handleButtonClick = (choice: ChoiceProps) => {
     //On met à jour les stats
-    const updateStats = () => {
-      localStorage.setItem(
-        'social_stat',
-        String(parseInt(localStorage.getItem('social_stat') ?? '') + (choice?.effects?.social ?? 0)),
-      );
-      localStorage.setItem(
-        'motivation_stat',
-        String(parseInt(localStorage.getItem('motivation_stat') ?? '') + (choice?.effects?.motivation ?? 0)),
-      );
-      localStorage.setItem(
-        'fitness_stat',
-        String(parseInt(localStorage.getItem('fitness_stat') ?? '') + (choice?.effects?.fitness ?? 0)),
-      );
-      localStorage.setItem(
-        'money_stat',
-        String(parseInt(localStorage.getItem('money_stat') ?? '') + (choice?.effects?.money ?? 0)),
-      );
-    };
+    gameInstance.updateStats(choice);
 
-    updateStats();
+    //Detection défaite
+    gameInstance.detectDefeat();
 
-    // Avance d'une étape dans la Timeline
+    //Detection victoire
+    gameInstance.detectVictory();
+
+    //Avance d'une étape dans la Timeline
     gameInstance.updateTimeline();
+
     //On vient supprimer la carte sur laquelle on a cliqué
     setCards((prevCards) => {
       return prevCards?.slice(1) || [];
