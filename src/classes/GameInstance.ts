@@ -68,17 +68,13 @@ export class GameInstance {
       return getItem(string) + (param ?? 0);
     };
 
-    //Envoye de la nouvelle stat dans le localStorage
-    const setStats = (string: string, param: number | undefined) => {
-      localStorage.setItem(string, String(getNewStats(string, param)));
-    };
-
     //Envoyer la stat avec la logique de pas dépasser 100
     const pushStats = (string: string, param: number | undefined) => {
-      // -> faire des if else ici
-      setStats(string, param);
-      //la variable "param" va envoyer le nombre de la stat dans la bonne stat -> variable "string"
-      //pour envoyer 100 dans le localstorage -> setStats(string, 100);
+      if (getNewStats(string, param) >= 100) {
+        localStorage.setItem(string, String(100));
+      } else {
+        localStorage.setItem(string, String(getNewStats(string, param)));
+      }
     };
 
     pushStats('social_stat', choice?.effects?.social);
