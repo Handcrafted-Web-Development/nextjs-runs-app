@@ -49,7 +49,10 @@ const GameLayout = ({
     updateStats();
 
     //Detection défaite
-    gameInstance.detectDefeat()
+    gameInstance.detectDefeat();
+
+    //Detection victoire
+    gameInstance.detectVictory();
 
     //Avance d'une étape dans la Timeline
     gameInstance.updateTimeline();

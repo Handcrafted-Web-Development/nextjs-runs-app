@@ -38,14 +38,20 @@ export class GameInstance {
 
   public detectDefeat = () => {
     if (
-        Number(localStorage.getItem('social_stat')) <= 0 ||
-        Number(localStorage.getItem('motivation_stat')) <= 0 ||
-        Number(localStorage.getItem('fitness_stat')) <= 0 ||
-        Number(localStorage.getItem('money_stat')) <= 0
+      Number(localStorage.getItem('social_stat')) <= 0 ||
+      Number(localStorage.getItem('motivation_stat')) <= 0 ||
+      Number(localStorage.getItem('fitness_stat')) <= 0 ||
+      Number(localStorage.getItem('money_stat')) <= 0
     ) {
       alert('défaite');
     }
-  }
+  };
+
+  public detectVictory = () => {
+    if (Number(localStorage.getItem('timeline')) === 15) {
+      alert('victoire');
+    }
+  };
 
   public updateTimeline = () => {
     localStorage.setItem('timeline', String(Number(localStorage.getItem('timeline')) + 1));
