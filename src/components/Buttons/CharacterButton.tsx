@@ -4,6 +4,7 @@ import '@/styles/character.scss';
 import { ReactElement, useState } from 'react';
 import Image from 'next/image';
 import Skill from '@/components/Skills/Skill';
+import skills from '@/services/api/skills.json';
 import { CharacterButtonProps } from '@/services/interfaces/Character';
 
 const CharacterButton = ({
@@ -47,16 +48,16 @@ const CharacterButton = ({
           <p>{CharacterProps.description}</p>
           <ul className="skills">
             <li>
-              <Skill name="Social" value={CharacterProps.social_stat} />
+              <Skill name={skills[0].name} value={CharacterProps.social_stat} color={skills[0].color} />
             </li>
             <li>
-              <Skill name="Argent" value={CharacterProps.money_stat} />
+              <Skill name={skills[1].name} value={CharacterProps.money_stat} color={skills[1].color} />
             </li>
             <li>
-              <Skill name="Mental" value={CharacterProps.motivation_stat} />
+              <Skill name={skills[2].name} value={CharacterProps.motivation_stat} color={skills[2].color} />
             </li>
             <li>
-              <Skill name="Santé" value={CharacterProps.fitness_stat} />
+              <Skill name={skills[3].name} value={CharacterProps.fitness_stat} color={skills[3].color} />
             </li>
           </ul>
           <button onClick={handleConfirm}>Je choisis {CharacterProps.name} !</button>
