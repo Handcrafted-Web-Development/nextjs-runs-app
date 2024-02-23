@@ -27,26 +27,7 @@ const GameLayout = ({
   //Quand on click sur le bouton
   const handleButtonClick = (choice: ChoiceProps) => {
     //On met à jour les stats
-    const updateStats = () => {
-      localStorage.setItem(
-        'social_stat',
-        String(parseInt(localStorage.getItem('social_stat') ?? '') + (choice?.effects?.social ?? 0)),
-      );
-      localStorage.setItem(
-        'motivation_stat',
-        String(parseInt(localStorage.getItem('motivation_stat') ?? '') + (choice?.effects?.motivation ?? 0)),
-      );
-      localStorage.setItem(
-        'fitness_stat',
-        String(parseInt(localStorage.getItem('fitness_stat') ?? '') + (choice?.effects?.fitness ?? 0)),
-      );
-      localStorage.setItem(
-        'money_stat',
-        String(parseInt(localStorage.getItem('money_stat') ?? '') + (choice?.effects?.money ?? 0)),
-      );
-    };
-
-    updateStats();
+    gameInstance.updateStats(choice);
 
     //Detection défaite
     gameInstance.detectDefeat();
