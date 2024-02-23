@@ -1,30 +1,31 @@
 import '@/styles/card.scss';
-import { ReactElement } from 'react';
+import {ReactElement} from 'react';
 import Button from '@/components/Buttons/Button';
-import { Card } from '@/classes/Card';
-const Index = ({ onClick, label, name, description, choices }: Card): ReactElement => {
-  return (
-    <div className="card">
-      <span className="card__label">{label}</span>
-      <div className="card__contain">
-        <div className="card__text">
-          <h3>{name}</h3>
-          <p>{description}</p>
+import {Card} from '@/classes/Card';
+
+const Index = ({onClick, label, name, description, img, choices}: Card): ReactElement => {
+    return (
+        <div className="card" style={{backgroundImage: `url(/assets/img/cards/${img})`}}>
+            <span className="card__label">{label}</span>
+            <div className="card__contain">
+                <div className="card__text">
+                    <h3>{name}</h3>
+                    <p>{description}</p>
+                </div>
+                <div className="card__buttons">
+                    {choices?.map((choice, index) => (
+                        <Button
+                            key={index}
+                            onClick={() => onClick(choice)}
+                            value={choice.value}
+                            choicesLenght={choices.length}
+                            choicePlace={choice.place}
+                        />
+                    ))}
+                </div>
+            </div>
         </div>
-        <div className="card__buttons">
-          {choices?.map((choice, index) => (
-            <Button
-              key={index}
-              onClick={() => onClick(choice)}
-              value={choice.value}
-              choicesLenght={choices.length}
-              choicePlace={choice.place}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Index;

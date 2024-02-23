@@ -7,7 +7,7 @@ export class Card {
   img;
   choices;
 
-  constructor(label: string, name: string, description: string, choices: ChoiceProps[], img?: string) {
+  constructor(label: string, name: string, description: string, choices: ChoiceProps[], img: string) {
     this.label = label;
     this.name = name;
     this.description = description;
