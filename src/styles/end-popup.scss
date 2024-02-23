@@ -1,6 +1,10 @@
 #end_popup {
-  top: 18%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  translate: none;
   height: 60vh;
+  box-shadow: 0 0 0 100vw rgb(0 0 0 / 0.5);
 
   button {
     border: none;

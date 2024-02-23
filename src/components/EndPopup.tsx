@@ -5,12 +5,14 @@ import { ReactElement } from 'react';
 import Image from 'next/image';
 import WinImage from '@/../../public/assets/img/win.png';
 import LooseImage from '@/../../public/assets/img/loose.png';
+import { GameInstance } from '@/classes/GameInstance';
 
 interface EndPopupProps {
   isWin: string | null;
+  gameInstance: GameInstance;
 }
 
-export default function EndPopup({ isWin }: EndPopupProps): ReactElement {
+export default function EndPopup({ isWin, gameInstance }: EndPopupProps): ReactElement {
   return (
     <div id="end_popup" className="popup">
       {isWin === 'true' ? (
@@ -24,7 +26,9 @@ export default function EndPopup({ isWin }: EndPopupProps): ReactElement {
           <p>Dommage... Tu n&apos;as pas réussi à atteindre ton objectif.</p>
         </>
       )}
-      <button>Recommencer</button>
+      <button className="button" onClick={gameInstance.getPlayAgain}>
+        Recommencer
+      </button>
     </div>
   );
 }

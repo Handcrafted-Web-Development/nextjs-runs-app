@@ -101,4 +101,9 @@ export class GameInstance {
     pushStats('fitness_stat', choice?.effects?.fitness);
     pushStats('money_stat', choice?.effects?.money);
   };
+
+  public getPlayAgain = () => {
+    localStorage.clear();
+    location.reload();
+  };
 }

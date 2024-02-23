@@ -88,7 +88,7 @@ const GameLayout = ({
       <Skills />
       <Timeline currentStep={currentStep} steps={15} />
       <div className="cards">{cardComponents}</div>
-      {isWin && <EndPopup isWin={isWin} />}
+      {isWin && <EndPopup isWin={isWin} gameInstance={gameInstance} />}
     </>
   );
 };
